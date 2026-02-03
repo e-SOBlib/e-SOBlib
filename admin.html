@@ -2,60 +2,101 @@
 <html lang="sw">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Admin Panel | Subscription System</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap & Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
 <style>
-body{background:#f4f7f6}
+body{
+  background:#f4f7f6;
+  padding-top:70px;
+}
+
+/* NAVBAR */
+.navbar-brand{
+  font-weight:700;
+}
+
+/* SIDEBAR */
 .sidebar{
   min-height:100vh;
   background:#2c3e50;
-  color:#fff
+  color:#fff;
 }
 .sidebar a{
   display:block;
-  padding:15px;
+  padding:14px 16px;
   color:#bdc3c7;
-  text-decoration:none
+  text-decoration:none;
 }
-.sidebar a.active,.sidebar a:hover{
+.sidebar a.active,
+.sidebar a:hover{
   background:#34495e;
   color:#fff;
-  border-left:4px solid #0d6efd
+  border-left:4px solid #0d6efd;
 }
-#adminContent{display:none}
+
+/* CONTENT */
+.card{
+  border:none;
+  border-radius:14px;
+}
+
+#adminContent{
+  display:none;
+}
+
+/* MOBILE FIXES */
+@media (max-width: 768px){
+  .sidebar{
+    min-height:auto;
+  }
+  .sidebar h5{
+    text-align:center;
+  }
+}
 </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-        <a class="navbar-brand" href="#">e-SOBlib</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-           <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-               <li class="nav-item">
-                <a class="nav-link active" href="index.html">Home</a>
-               </li>
-              </ul>
-            </div>
-        </div>
-    </nav>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">e-SOBlib</a>
+
+    <button class="navbar-toggler" type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <!-- LOGIN -->
-<div id="loginSection" class="container" style="max-width:400px;margin-top:120px;">
-  <div class="card p-4 shadow">
-    <h4 class="text-center mb-3">Admin Login</h4>
+<div id="loginSection" class="container" style="max-width:420px;">
+  <div class="card p-4 shadow mt-5">
+    <h4 class="text-center mb-3 fw-bold">Admin Login</h4>
     <div id="loginAlert"></div>
+
     <form id="loginForm">
       <input class="form-control mb-3" id="username" placeholder="Username" required>
       <input type="password" class="form-control mb-3" id="password" placeholder="Password" required>
-      <button class="btn btn-primary w-100">Login</button>
+      <button class="btn btn-primary w-100 fw-semibold">Login</button>
     </form>
   </div>
 </div>
@@ -64,68 +105,96 @@ body{background:#f4f7f6}
 <div id="adminContent" class="container-fluid">
   <div class="row">
 
+    <!-- SIDEBAR -->
     <nav class="col-md-2 sidebar p-0">
-      <h5 class="p-3">Admin Panel</h5>
-      <a href="#" class="active" onclick="showTab('home')"><i class="fa fa-home me-2"></i>Dashboard</a>
-      <a href="#" onclick="showTab('settings')"><i class="fa fa-cog me-2"></i>Settings</a>
-      <a href="#" class="text-danger mt-5" onclick="logout()"><i class="fa fa-sign-out-alt me-2"></i>Logout</a>
+      <h5 class="p-3 mb-0">Admin Panel</h5>
+      <a href="#" class="active" onclick="showTab('home')">
+        <i class="fa fa-home me-2"></i> Dashboard
+      </a>
+      <a href="#" onclick="showTab('settings')">
+        <i class="fa fa-cog me-2"></i> Settings
+      </a>
+      <a href="#" class="text-danger mt-4" onclick="logout()">
+        <i class="fa fa-sign-out-alt me-2"></i> Logout
+      </a>
     </nav>
 
+    <!-- MAIN -->
     <main class="col-md-10 p-4">
+
+      <!-- HOME -->
       <div id="tabHome">
-        <h2>Karibu Admin</h2>
-        <p>Hii ni admin dashboard yako.</p>
-            <div class="row">
-              <div class="col-md-6 col-lg-4">
-                <div class="card p-4 text-center shadow-sm">
-                  <i class="fas fa-table fa-3x text-success mb-3"></i>
-                  <h4>Subscriptions</h4>
-                  <p>Bonyeza hapa kuona list ya malipo na wanafunzi.</p>
-                  <a href="https://docs.google.com/spreadsheets/d/1NVaw4qSIn2b9JKnw5EuRnn5R72JDHGxq0pmrLFdFWkc/edit?usp=sharing"
-                    target="_blank"
-                    class="btn btn-success">
-                    Fungua Google Sheet <i class="fas fa-external-link-alt ms-1"></i>
-                  </a>
-                </div>
-              </div>
-            </div><br><br>
-            <div class="row">
-              <div class="col-md-6 col-lg-4">
-                <div class="card p-4 text-center shadow-sm">
-                  <i class="fas fa-table fa-3x text-success mb-3"></i>
-                  <h4>Student ID</h4>
-                  <p>Cick here to manage student ID.</p>
-                  <a href="https://docs.google.com/spreadsheets/d/15-Sl19A736yvRhQEoJbx0ggXCehMhKhWp9h34QYVfA8/edit?usp=sharing"
-                    target="_blank"
-                    class="btn btn-success">
-                    Fungua Google Sheet <i class="fas fa-external-link-alt ms-1"></i>
-                  </a>
-                </div>
-              </div>
+        <h2 class="fw-bold mb-2">Karibu Admin</h2>
+        <p class="text-muted">Hii ni admin dashboard yako.</p>
+
+        <div class="row g-4">
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="card p-4 text-center shadow-sm h-100">
+              <i class="fas fa-table fa-3x text-success mb-3"></i>
+              <h4>Subscriptions</h4>
+              <p>Angalia malipo na wanafunzi.</p>
+              <a href="https://docs.google.com/spreadsheets/d/1NVaw4qSIn2b9JKnw5EuRnn5R72JDHGxq0pmrLFdFWkc/edit?usp=sharing"
+                 target="_blank"
+                 class="btn btn-success w-100">
+                Fungua Google Sheet
+              </a>
             </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="card p-4 text-center shadow-sm h-100">
+              <i class="fas fa-id-card fa-3x text-primary mb-3"></i>
+              <h4>Student ID</h4>
+              <p>Manage student ID.</p>
+              <a href="https://docs.google.com/spreadsheets/d/15-Sl19A736yvRhQEoJbx0ggXCehMhKhWp9h34QYVfA8/edit?usp=sharing"
+                 target="_blank"
+                 class="btn btn-primary w-100">
+                Fungua Google Sheet
+              </a>
+            </div>
+          </div>
+
+        </div>
       </div>
 
+      <!-- SETTINGS -->
       <div id="tabSettings" style="display:none;">
-        <h3>Badilisha Login Credentials</h3>
-        <form id="settingsForm" style="max-width:400px">
+        <h3 class="fw-bold mb-3">Badilisha Login Credentials</h3>
+        <form id="settingsForm" style="max-width:400px;">
           <input class="form-control mb-3" id="newUser" placeholder="Username mpya" required>
           <input type="password" class="form-control mb-3" id="newPass" placeholder="Password mpya" required>
-          <button class="btn btn-warning">Update</button>
+          <button class="btn btn-warning w-100">Update</button>
         </form>
       </div>
-    </main>
 
+    </main>
   </div>
 </div>
 
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
-const API_URL = "https://script.google.com/macros/s/AKfycbx6c9feLjqTPcaCPBugrSxiyvVICm4DJ-_p41jFTW7XEMGMpoOxYMlO_ag4cftTtOco/exec";
+const API_URL="https://script.google.com/macros/s/AKfycbx6c9feLjqTPcaCPBugrSxiyvVICm4DJ-_p41jFTW7XEMGMpoOxYMlO_ag4cftTtOco/exec";
 
-/* LOGIN */
-loginForm.addEventListener("submit", async e=>{
+const loginForm=document.getElementById("loginForm");
+const username=document.getElementById("username");
+const password=document.getElementById("password");
+const loginSection=document.getElementById("loginSection");
+const adminContent=document.getElementById("adminContent");
+const loginAlert=document.getElementById("loginAlert");
+
+const settingsForm=document.getElementById("settingsForm");
+const newUser=document.getElementById("newUser");
+const newPass=document.getElementById("newPass");
+
+const tabHome=document.getElementById("tabHome");
+const tabSettings=document.getElementById("tabSettings");
+
+loginForm.addEventListener("submit",async e=>{
   e.preventDefault();
-
-  const res = await fetch(API_URL,{
+  const res=await fetch(API_URL,{
     method:"POST",
     body:new URLSearchParams({
       action:"login",
@@ -133,9 +202,7 @@ loginForm.addEventListener("submit", async e=>{
       password:password.value
     })
   });
-
-  const data = await res.json();
-
+  const data=await res.json();
   if(data.status==="success"){
     loginSection.style.display="none";
     adminContent.style.display="block";
@@ -144,10 +211,8 @@ loginForm.addEventListener("submit", async e=>{
   }
 });
 
-/* UPDATE */
-settingsForm.addEventListener("submit", async e=>{
+settingsForm.addEventListener("submit",async e=>{
   e.preventDefault();
-
   await fetch(API_URL,{
     method:"POST",
     body:new URLSearchParams({
@@ -156,14 +221,13 @@ settingsForm.addEventListener("submit", async e=>{
       password:newPass.value
     })
   });
-
   alert("Credentials zimebadilishwa");
   logout();
 });
 
 function showTab(tab){
-  tabHome.style.display = tab==="home"?"block":"none";
-  tabSettings.style.display = tab==="settings"?"block":"none";
+  tabHome.style.display=tab==="home"?"block":"none";
+  tabSettings.style.display=tab==="settings"?"block":"none";
 }
 
 function logout(){
