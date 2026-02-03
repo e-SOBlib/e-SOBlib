@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Business Study Materials</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f7f8fc;
+        }
+        .hero-section {
+            background: linear-gradient(45deg, #007bff, #6610f2);
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 30px;
+        }
+        .category-title {
+            font-weight: bold;
+            font-size: 1.7rem;
+            margin-bottom: 15px;
+        }
+        .subject-card {
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            height: 100%;
+        }
+        .open-btn {
+            background: #6a1bff;
+            color: white;
+            border-radius: 30px;
+        }
+        .open-btn:hover {
+            background: #5414cc;
+            color: white;
+        }
+        .highlight {
+            background-color: #fff3cd; /* soft yellow */
+            padding: 0 3px;
+            border-radius: 3px;
+        }
+        .sticky-home {
+            position: fixed;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            z-index: 1050;
+
+            background: #0d6efd; /* Bootstrap primary */
+            color: #fff;
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,.2);
+            transition: all .3s ease;
+            }
+
+        .sticky-home:hover {
+            background: #0b5ed7;
+            color: #fff;
+            transform: translateY(-50%) scale(1.1);
+            }
+    </style>
+</head>
+<body>
+<!-- Sticky Left Home Button -->
+<a href="index.html" class="sticky-home" title="Home">
+  <i class="bi bi-house-fill"></i>
+</a>
+
+    <!-- Sticky Search Bar -->
+<div class="sticky-top bg-light py-3 shadow-sm">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="input-group">
+
+          <!-- Search Icon -->
+          <span class="input-group-text bg-white">
+            <i class="bi bi-search"></i>
+          </span>
+
+          <!-- Search Input -->
+          <input 
+            type="text"
+            id="searchInput"
+            class="form-control"
+            placeholder="Search subject by name..."
+            onkeyup="searchSubjects()"
+          >
+
+          <!-- Clear Button -->
+          <button 
+            class="btn btn-outline-secondary d-none"
+            id="clearBtn"
+            onclick="clearSearch()">
+            <i class="bi bi-x-lg"></i>
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- No Results Message -->
+    <p id="noResults" class="text-center text-muted mt-3 d-none">
+      ❌ No results found
+    </p>
+  </div>
+</div>
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-light bg-white shadow-sm">
+    <div class="container">
+        <span class="navbar-brand mx-auto fw-bold">Business Study Materials</span>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero-section text-center">
+  <h1>e-SOBlib</h1>
+  <p>Browse notes by category</p>
+</div>
+
+<div class="container my-5">
+
+<!-- ================= IT & COMPUTER TECHNOLOGY ================= -->
+<h2 class="category-title">🖥️ IT & Computer Technology</h2>
+<div class="row g-4 mb-5">
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Advance Database Applications (P)</h6>
+    <a href="advancedatabase/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Advance Excel (P)</h6>
+    <a href="advancexcel/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Advance Server Management</h6>
+    <a href="advance-server/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Advance Website Programming</h6>
+    <a href="it/advanceweb.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Computer Application (P)</h6>
+    <a href="computer-application/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Computer Assisted Audit</h6>
+    <a href="computer-audit/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Computerized Accounting Application (P)</h6>
+    <a href="Computerizeaccount/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Data Communication and Networking</h6>
+    <a href="datacomm/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Database Management System (P)</h6>
+    <a href="dbms/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>E-Commerce</h6>
+    <a href="ecommerce/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>E-Government</h6>
+    <a href="egovernment/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>E-Procurement</h6>
+    <a href="eprocurement/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Electronic Banking</h6>
+    <a href="electrobanking/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Fundamental of Website Design and Development</h6>
+    <a href="web-design/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Introduction to Information Technology</h6>
+    <a href="intro-it/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Mobile Application Development</h6>
+    <a href="mobileapd/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Ms. Visual Programming</h6>
+    <a href="Msvisual/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Network Administration and Management</h6>
+    <a href="network-admin/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Object-Oriented Programming (OOP)</h6>
+    <a href="oop/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Operating Systems</h6>
+    <a href="operating-systems/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Programming Principles and Algorithms</h6>
+    <a href="programmingpython/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Software Project Management</h6>
+    <a href="software-project/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>System Analysis and Design</h6>
+    <a href="system-analysis/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card subject-card p-3">
+    <h6>Windows Server Administration</h6>
+    <a href="winserver/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a>
+  </div>
+</div>
+
+
+</div>
+
+<!-- ================= ACCOUNTING ================= -->
+<h2 class="category-title">📊 Accounting</h2>
+<div class="row g-4 mb-5">
+
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Principle of Accounting</h6><a href="principle of account/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Intermediate Accounting</h6><a href="intermideaccounting/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Cost Accounting</h6><a href="accountingcost/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+
+
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Financial Reporting</h6><a href="financialreporting/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Public Sector Accounting</h6><a href="public-sector/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+
+
+
+</div>
+
+<!-- ================= FINANCE & BANKING ================= -->
+<h2 class="category-title">💰 Finance & Banking</h2>
+<div class="row g-4 mb-5">
+
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Financial Management</h6><a href="financial-management/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Corporate Finance</h6><a href="corporate-finance/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+<div class="col-md-4"><div class="card subject-card p-3"><h6>International Banking and Finance</h6><a href="international-banking/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Money and Banking</h6><a href="money-banking/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Microfinance for Development</h6><a href="Microfinance/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+
+</div>
+
+<!-- ================= OTHERS ================= -->
+<h2 class="category-title">⚖️ Auditing, Law & Governance</h2>
+<div class="row g-4 mb-5">
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Introduction to Auditing</h6><a href="intro-auditing/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Auditing and Assurance</h6><a href="assurance/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Corporate Governance</h6><a href="corporategovernance/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Commercial Law</h6><a href="cormecialaw/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Legal Aspect in Procurement</h6><a href="aspectinprocurement/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Application of Tax Laws</h6><a href="apptaxlaw/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+
+</div>
+
+<!-- ================= 📐📈 Business & Management, Quantitative & Mathematics ================= -->
+ <h2 class="category-title">📐📈 Business & Management, Quantitative & Mathematics</h2>
+<div class="row g-4 mb-5">
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Business Communication Skills</h6><a href="businessskills/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Business Law</h6><a href="businesslaw/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Commerce and Office Practice</h6><a href="commerceoffice/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Organization Behaviour</h6><a href="organizationalbehavior/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Marketing Management</h6><a href="MarketingManagement/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Project Planning Management</h6><a href="ProjectPlanningManagement/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+</div>
+<!-- =================🚀 Entrepreneurship & Innovation  ================= -->
+<h2 class="category-title"> 🚀 Entrepreneurship & Innovation</h2>
+<div class="row g-4 mb-5">
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Entrepreneurship</h6><a href="Entreprenuership/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+<div class="col-md-4"><div class="card subject-card p-3"><h6>Innovation and SMEs Development</h6><a href="innovationSMEs/tableofcontent.html" class="btn open-btn mt-3">Open Notes</a></div></div>
+
+</div>
+<script>
+function searchSubjects() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let cards = document.querySelectorAll(".subject-card");
+  let clearBtn = document.getElementById("clearBtn");
+  let noResults = document.getElementById("noResults");
+
+  let found = false;
+
+  cards.forEach(card => {
+    let titleElement = card.querySelector("h6");
+    let originalText = titleElement.innerText;
+    let title = originalText.toLowerCase();
+
+    // Remove previous highlights
+    titleElement.innerHTML = originalText;
+
+    if (title.includes(input) && input !== "") {
+      card.parentElement.style.display = "block";
+      found = true;
+
+      // Highlight matching text
+      let regex = new RegExp(`(${input})`, "ig");
+      titleElement.innerHTML = originalText.replace(
+        regex,
+        `<span class="highlight">$1</span>`
+      );
+
+    } else if (input === "") {
+      card.parentElement.style.display = "block";
+    } else {
+      card.parentElement.style.display = "none";
+    }
+  });
+
+  // Toggle clear button
+  clearBtn.classList.toggle("d-none", input.length === 0);
+
+  // Show "No Results"
+  noResults.classList.toggle("d-none", found || input.length === 0);
+}
+
+function clearSearch() {
+  document.getElementById("searchInput").value = "";
+  document.getElementById("clearBtn").classList.add("d-none");
+  document.getElementById("noResults").classList.add("d-none");
+
+  document.querySelectorAll(".subject-card").forEach(card => {
+    let titleElement = card.querySelector("h6");
+    titleElement.innerHTML = titleElement.innerText; // remove highlight
+    card.parentElement.style.display = "block";
+  });
+}
+</script>
+</body>
+</html>

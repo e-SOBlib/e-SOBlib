@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>e-SOBlib | Digital Library</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet">
+
+    <style>
+        body {
+    background-color: #ffffff;
+    min-height: 100vh;
+    position: relative;
+             }
+
+    /* Logo watermark */
+    body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("logo esoblib.png");
+            background-repeat: no-repeat;
+            background-position: center 60%;
+            background-size: 940px;
+            opacity: 0.09;          /* watermark strength */
+            z-index: -1;            /* stay behind content */
+        }
+        .navbar {
+            background-color: #0d6efd;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-box {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #0d6efd;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark">
+    <div class="container">
+
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="logo esoblib.png" alt="e-SOBlib Logo" class="logo me-2">
+            <span class="fw-bold">School of Business Digital Library</span>
+        </a>
+
+        <!-- Hamburger Menu -->
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu Items -->
+        <div class="collapse navbar-collapse" id="mainMenu">
+            <ul class="navbar-nav ms-auto mt-3 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">
+                        <i class="bi bi-box-arrow-in-right"></i> Login
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html">
+                        <i class="bi bi-person-plus"></i> Register
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">
+                        <i class="bi bi-info-circle"></i> About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin.html">
+                        <i class="bi bi-person-fill"></i> Admin
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://wa.me/+225651527779">
+                        <i class="bi bi-whatsapp"></i> Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center hero-box">
+
+                <h2 class="fw-bold text-primary mb-3">
+                    Welcome to e-SOBlib
+                </h2>
+
+                <p class="text-muted">
+                    Your smart digital library for academic notes and learning
+                    resources.
+                </p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-3">
+    <small>© 2025 e-SOBlib Digital Library</small>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
