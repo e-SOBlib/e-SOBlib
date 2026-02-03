@@ -16,53 +16,79 @@
       rel="stylesheet">
 
     <style>
-        body {
-    background-color: #ffffff;
-    min-height: 100vh;
-    position: relative;
-             }
+    body {
+        background-color: #ffffff;
+        min-height: 100vh;
+        position: relative;
+        overflow-x: hidden;
+    }
 
     /* Logo watermark */
     body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("logo esoblib.png");
-            background-repeat: no-repeat;
-            background-position: center 60%;
-            background-size: 940px;
-            opacity: 0.09;          /* watermark strength */
-            z-index: -1;            /* stay behind content */
-        }
-        .navbar {
-            background-color: #0d6efd;
-        }
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("logo esoblib.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 60vw; /* responsive default */
+        opacity: 0.08;
+        z-index: -1;
+    }
 
-        .logo {
-            height: 40px;
-        }
+    .navbar {
+        background-color: #0d6efd;
+    }
 
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
+    .logo {
+        height: 40px;
+    }
+
+    .hero {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .hero-box {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 40px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+        background-color: #0d6efd;
+        color: white;
+    }
+
+    /* 📱 Mobile adjustments */
+    @media (max-width: 576px) {
+        body::before {
+            background-size: 85vw;   /* smaller watermark */
+            background-position: center 55%;
         }
 
         .hero-box {
-            background: white;
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 25px;
         }
 
-        footer {
-            background-color: #0d6efd;
-            color: white;
+        .navbar-brand span {
+            font-size: 0.9rem;
+            line-height: 1.2;
         }
-    </style>
+    }
+
+    /* 💻 Large screens */
+    @media (min-width: 992px) {
+        body::before {
+            background-size: 900px;
+            background-position: center 60%;
+        }
+    }
+</style>
+
 </head>
 
 <body>
@@ -110,7 +136,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://wa.me/+225651527779">
+                    <a class="nav-link" href="https://wa.me/225651527779">
                         <i class="bi bi-whatsapp"></i> Contact Us
                     </a>
                 </li>
@@ -142,7 +168,7 @@
 
 <!-- Footer -->
 <footer class="text-center py-3">
-    <small>© 2025 e-SOBlib Digital Library</small>
+    <small>© 2026 e-SOBlib Digital Library</small>
 </footer>
 
 <!-- Bootstrap JS -->
@@ -150,4 +176,5 @@
 
 </body>
 </html>
+
 
