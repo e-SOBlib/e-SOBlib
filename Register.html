@@ -33,9 +33,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
     <a class="navbar-brand" href="#">e-SOBlib</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <a class="navbar-brand" href="index.html">Home</a>
+    
   </div>
 </nav>
 
@@ -86,7 +85,8 @@
 </div>
 
 <script>
-/* ============ CONFIGURATION (CHANGE ONLY SCRIPT URL) ============ */
+/* ============ CONFIGURATION ============ */
+// 1. Replace with your actual Web App URL from Google Apps Script
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxlaEV8NerBDnzDiQTDvOGDwj30XDdv9hPQyBetpzsSFU75qjZr-Ca_s0Thj_cAdpCx/exec";
 const WHATSAPP_NUMBER = "255651527779";
 
@@ -115,20 +115,8 @@ function generateStudentID(firstName, lastName) {
   return `SUB-${fi}${li}-${year}-${rand}`;
 }
 
-function saveToGoogleSheet(data) {
-  document.getElementById("loadingSpinner").classList.remove("d-none"); // SHOW SPINNER
-
-  fetch(GOOGLE_SCRIPT_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
-  })
-  .then(res => console.log("Saved to Google Sheet"))
-  .catch(err => console.error("Error:", err));
-}
-
-
-function registerAndSend() {
+// THE MAIN FIX: Combined logic into one Async function
+async function registerAndSend() {
   const firstName = document.getElementById("firstName").value.trim();
   const lastName = document.getElementById("lastName").value.trim();
   const semester = document.getElementById("subscription").value;
@@ -140,64 +128,43 @@ function registerAndSend() {
 
   const amount = FEES[semester];
   const studentID = generateStudentID(firstName, lastName);
+  const spinner = document.getElementById("loadingSpinner");
 
-  // Show spinner while sending data
-  saveToGoogleSheet({
+  // 1. Show the Loading Spinner
+  spinner.classList.remove("d-none");
+
+  const data = {
     student_id: studentID,
     first_name: firstName,
     last_name: lastName,
     semester: semester,
     amount: amount
-  });
+  };
 
-  const message =
-`Habari,
-Naitwa ${firstName} ${lastName}.
+  try {
+    // 2. Wait for Google Sheets to respond (using 'no-cors' for GitHub compatibility)
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors", 
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
 
-Ninaomba kulipia subscription fee.
-- Plan: ${semester}
-- Amount: TZS ${amount.toLocaleString()}
+    // 3. Prepare the WhatsApp URL
+    const message = `Habari,\nNaitwa ${firstName} ${lastName}.\n\nNinaomba kulipia subscription fee.\n- Plan: ${semester}\n- Amount: TZS ${amount.toLocaleString()}\n\nNaomba maelekezo ya malipo.`;
+    const whatsappURL = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
 
-Naomba maelekezo ya malipo.`;
-
-  const whatsappURL = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
-
-  // Hide spinner and go to WhatsApp
-  setTimeout(() => {
-    document.getElementById("loadingSpinner").classList.add("d-none");
+    // 4. Finally, redirect to WhatsApp
     window.location.href = whatsappURL;
-  }, 1500); // 1.5 seconds delay
+
+  } catch (error) {
+    console.error("Submission error:", error);
+    alert("Kuna tatizo la mtandao. Jaribu tena.");
+    spinner.classList.add("d-none"); // Hide spinner only if it fails
+  }
 }
-
-  const amount = FEES[semester];
-  const studentID = generateStudentID(firstName, lastName);
-
-  // Send to Google Sheet
-  saveToGoogleSheet({
-    student_id: studentID,
-    first_name: firstName,
-    last_name: lastName,
-    semester: semester,
-    amount: amount
-  });
-
-  const message =
-`Habari,
-Naitwa ${firstName} ${lastName}.
-
-Ninaomba kulipia subscription fee.
-- Plan: ${semester}
-- Amount: TZS ${amount.toLocaleString()}
-
-Naomba maelekezo ya malipo.`;
-
-  const whatsappURL = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
-
-  // Reliable way (works on GitHub Pages)
-  window.location.href = whatsappURL;
 </script>
 
 </body>
 </html>
-
 
