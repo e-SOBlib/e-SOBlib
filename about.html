@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us | e-SOBlib</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f5f9ff;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar */
+        .esoblib-navbar {
+            background-color: #0d6efd;
+        }
+
+        .esoblib-navbar .navbar-brand,
+        .esoblib-navbar .nav-link {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .esoblib-navbar .nav-link:hover,
+        .esoblib-navbar .nav-link.active {
+            color: #cfe2ff;
+        }
+
+        /* Mobile dropdown background */
+        @media (max-width: 768px) {
+            .navbar-collapse {
+                background-color: #0a355f;
+                padding: 12px;
+                border-radius: 0 0 12px 12px;
+            }
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 60px 15px;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .about-container h2 {
+            text-align: center;
+            font-size: 30px;
+            color: #0a355f;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 17px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .about-content p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        .mission {
+            background: #eef3ff;
+            padding: 18px;
+            border-left: 5px solid #0d6efd;
+            border-radius: 6px;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-md navbar-dark esoblib-navbar">
+    <div class="container">
+
+        <!-- Brand -->
+        <a class="navbar-brand fw-bold" href="index.html">e-SOBlib</a>
+
+        <!-- Hamburger -->
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainMenu"
+                aria-controls="mainMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse" id="mainMenu">
+            <ul class="navbar-nav ms-auto mt-3 mt-md-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="bi bi-house-door"></i> Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">
+                        <i class="bi bi-box-arrow-in-right"></i> Login
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html">
+                        <i class="bi bi-person-plus"></i> Register
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://wa.me/+225651527779">
+                        <i class="bi bi-whatsapp"></i> Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!-- ABOUT SECTION -->
+<section class="about-section">
+    <div class="about-container">
+        <h2>About Us</h2>
+        <p class="subtitle">e-SOBlib — Powered by Students</p>
+
+        <div class="about-content">
+            <p>
+                Welcome to e-SOBlib — a digital platform created and managed by students of 
+                the State University of Zanzibar (SUZA), Chwaka Campus, School of Business, 
+                pursuing a Bachelor Degree in Information Technology with Accounting.
+            </p>
+
+            <p>
+                While we proudly serve the SOB Chwaka Campus community, e-SOBlib is an independent
+                academic resource and not an official SUZA university service, we respect all SUZA intellectual property.
+                We charge a small fee to keep our servers running. For more details on our legal policies please visit our
+                <a href="terms.html">Terms of Service.</a>
+            </p>
+
+            <p>
+                The platform focuses mainly on business-related subjects.
+                Our goal is to make learning easier by providing instant access to curated academic notes and exam preparation materials.
+            </p>
+
+            <p class="mission">
+                <strong>Our Mission:</strong> To empower students through accessible,
+                high-quality learning resources and a user-friendly digital library experience.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

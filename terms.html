@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service | e-SOBlib</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    background: #f4f6f9;
+}
+
+.header-gradient {
+    background: linear-gradient(135deg, #0d6efd, #0a58ca);
+}
+
+.tos-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.tos-card {
+    border-radius: 15px;
+}
+
+.agree-box {
+    background: #e7f1ff;
+    border-left: 5px solid #0d6efd;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Modern Blue Header -->
+<header class="header-gradient text-white py-4 shadow">
+<div class="container text-center">
+<h2 class="fw-bold">e-SOBlib Terms of Service</h2>
+<p class="mb-0">Please read carefully before using the platform. Last Updated: February 2026</p>
+</div>
+</header>
+
+<div class="container my-5 tos-container">
+
+<div class="card shadow-sm tos-card">
+<div class="card-body p-4">
+
+<h4 class="text-primary">1. Introduction</h4>
+<p>
+Welcome to e-SOBlib. By accessing or using this platform, you agree to comply with these Terms of Service. 
+If you do not agree, you must not use the platform.
+</p>
+<hr>
+
+<h4 class="text-primary">2. Eligibility</h4>
+<p>
+This platform is primarily intended for university students pursuing business-related programs,
+and Information technology.
+</p>
+<hr>
+
+<h4 class="text-primary">3. Acceptable Use</h4>
+<ul>
+<li>Use the platform only for lawful and educational purposes.</li>
+<li>Do not attempt to hack, disrupt, or manipulate the system.</li>
+</ul>
+<hr>
+
+<h4 class="text-primary">4. Intellectual Property</h4>
+
+<p><strong>No Claim of Rights:</strong></p>
+<p>
+e-SOBlib does not claim ownership over materials uploaded or shared on the platform. The platform functions as a 
+student-managed digital repository that hosts and organizes academic resources contributed by students and other sources.
+</p>
+
+<p><strong>Authorized Use:</strong></p>
+<p>
+Access to materials on e-SOBlib may be provided through a subscription model. Regardless of subscription status, all materials are provided strictly for personal, non-commercial,
+ and educational use by students. Users are prohibited from redistributing, selling, or commercially exploiting any content obtained from the platform.
+ <br>
+ Important: The subscription fee is charged for platform maintenance, data hosting, and curation services. 
+</p>
+<p><strong>Limited License to Content: </strong></p>
+</p> Notes provided in this platform are synthesized from various public and academic sources. We do not claim ownership of the underlying facts or third-party source materials. 
+However, the expression, summaries, and organizational format found within the platform are original works of authorship.
+ We grant you a personal, non-exclusive, and non-transferable license to access this content for personal, non-commercial educational use only.</p>
+<p><strong>Third-Party Rights & Fair Use: </strong></p>
+   <p>We respect the intellectual property of others. All third-party trademarks, book titles, and citations remain the property of their respective owners. 
+    Our use of these references is intended for educational commentary and synthesis, which we believe constitutes Fair Use under applicable law.</p>
+ <hr>
+
+<h4 class="text-primary">5. Content Accuracy</h4>
+<p>
+e-SOBlib does not guarantee that all materials are completely accurate or up to date.
+</p>
+<hr>
+
+<h4 class="text-primary">6. Account Suspension</h4>
+<p>
+e-SOBlib reserves the right to suspend or terminate any account that violates these terms.
+</p>
+<hr>
+<h4 class="text-primary">7. Copyright Infringement (DMCA/Takedown)</h4>
+<p>
+    If you are a faculty member or a copyright owner and believe that any content on this platform infringes upon your rights, 
+    please contact us at esoblibadm@gmail.com. We will review and remove the disputed content within 48-72 hours.
+</p>
+<hr>
+
+<h4 class="text-primary">8. Limitation of Liability</h4>
+<p>
+e-SOBlib shall not be held liable for any loss arising from the use of this platform.
+</p>
+<hr>
+
+<h4 class="text-primary">9. Changes to Terms</h4>
+<p>
+These terms may be updated at any time. Continued use means acceptance of changes.
+</p>
+<hr>
+
+<h4 class="text-primary">10. Contact</h4>
+<p>
+For inquiries: <strong>esoblibadm@gmail.com | +225 651 527 779</strong>
+</p>
+
+<!-- Agree Section -->
+<div class="agree-box p-3 mt-4 rounded">
+<div class="form-check">
+<input class="form-check-input" type="checkbox" id="agreeCheck">
+<label class="form-check-label" for="agreeCheck">
+I have read and agree to the Terms of Service
+</label>
+</div>
+
+<button id="agreeBtn" class="btn btn-primary mt-3" disabled>
+I Agree
+</button>
+</div>
+
+</div>
+</div>
+</div>
+
+<footer class="bg-dark text-white text-center py-3">
+<small>&copy; 2026 e-SOBlib. All rights reserved.</small>
+</footer>
+
+<script>
+const checkbox = document.getElementById("agreeCheck");
+const button = document.getElementById("agreeBtn");
+
+checkbox.addEventListener("change", function() {
+    button.disabled = !this.checked;
+});
+
+button.addEventListener("click", function() {
+    alert("You have accepted the Terms of Service.");
+
+    // Go back to previous page, then close this tab/window
+    window.history.back();
+
+    // If opened as a new tab/window, close after a short delay
+    setTimeout(function() {
+        window.close();
+    }, 500);
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
