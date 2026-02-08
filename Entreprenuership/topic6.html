@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrepreneurship Skills | Topic 6</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <style>
+    :root {
+      --primary-blue: #0d6efd;
+      --secondary-purple: #6f42c1;
+      --success-green: #198754;
+      --warning-orange: #fd7e14;
+      --info-teal: #20c997;
+      --danger-red: #dc3545;
+    }
+    
+    .concept-box {
+      background-color: #f8f9fa;
+      border-left: 4px solid var(--primary-blue);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    
+    .key-term {
+      color: var(--primary-blue);
+      font-weight: bold;
+      background: linear-gradient(120deg, rgba(13, 110, 253, 0.1) 0%, transparent 100%);
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    
+    .scholar-quote {
+      font-style: italic;
+      border-left: 3px solid var(--info-teal);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      background: linear-gradient(90deg, rgba(32, 201, 151, 0.05) 0%, transparent 100%);
+      padding: 1.5rem;
+    }
+    
+    .framework-card {
+      transition: all 0.3s ease;
+      border: 1px solid #dee2e6;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      height: 100%;
+    }
+    
+    .framework-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    
+    .section-icon {
+      font-size: 1.5rem;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    
+    .evolution-timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .evolution-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--primary-blue), var(--secondary-purple));
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-left: 1.5rem;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.3rem;
+      top: 0.5rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--primary-blue);
+    }
+    
+    .data-point {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      border: 1px solid #e9ecef;
+    }
+    
+    .comparison-table th {
+      position: sticky;
+      top: 0;
+      background-color: var(--primary-blue);
+      color: white;
+    }
+    
+    .interactive-element {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .interactive-element:hover {
+      background-color: rgba(13, 110, 253, 0.05);
+    }
+    
+    .global-map {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 10px;
+      padding: 2rem;
+      margin: 2rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .global-map::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 30px 30px;
+      z-index: 0;
+    }
+    
+    .global-map > * {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .stat-badge {
+      font-size: 0.85rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      margin: 0.25rem;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body class="bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="tableofcontent.html">🔙</a>
+        
+        <span class="navbar-text fw-bold text-primary me-auto">
+            <i class="bi bi-journal-text"></i> Entrepreneurship Skills
+        </span>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+       <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#contemporary">Contemporary Issues</a></li>
+        <li class="nav-item"><a class="nav-link" href="#incubation">Incubation</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="#women">Women</a></li>
+        <li class="nav-item"><a class="nav-link" href="#rural">Rural</a></li>
+        <li class="nav-item"><a class="nav-link" href="#social">Social</a></li>
+        <li class="nav-item"><a class="nav-link" href="#global">Globalization</a></li>
+        <li class="nav-item"><a class="nav-link" href="#exercises">Exercises</a></li>
+       </ul>
+     </div>
+  </div>
+</nav>
+
+<div class="container my-5">
+  <!-- Introduction -->
+  <section class="mb-5">
+    <div class="card shadow-sm p-4 border-0">
+      <h1 class="text-primary mb-4 display-5 fw-bold">
+        <i class="bi bi-compass section-icon"></i>Contemporary Issues in Modern Entrepreneurship
+      </h1>
+      <p class="lead fs-4">Exploring the evolving landscape of entrepreneurship in the 21st century - from digital transformation and social impact to inclusive ecosystems and global connectivity.</p>
+      
+      <div class="concept-box">
+        <h5 class="mb-3">📊 The Changing Entrepreneurial Landscape</h5>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="data-point">
+              <div class="d-flex justify-content-between">
+                <span class="fw-bold">Digital Shift</span>
+                <span class="badge bg-primary">80%</span>
+              </div>
+              <small>of new ventures now incorporate digital elements</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="data-point">
+              <div class="d-flex justify-content-between">
+                <span class="fw-bold">Social Focus</span>
+                <span class="badge bg-success">40%</span>
+              </div>
+              <small>increase in social enterprises since 2010</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="data-point">
+              <div class="d-flex justify-content-between">
+                <span class="fw-bold">Women-Led</span>
+                <span class="badge bg-warning">42%</span>
+              </div>
+              <small>of global businesses now women-owned</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Contemporary Issues -->
+  <section id="contemporary" class="mb-5">
+    <br><br>
+    <div class="card shadow-sm p-4 border-0">
+      <h2 class="text-primary mb-4">
+        <i class="bi bi-lightning-charge-fill section-icon"></i>Contemporary Issues in Entrepreneurship
+      </h2>
+      
+      <div class="scholar-quote">
+        "The greatest danger in times of turbulence is not the turbulence; it is to act with yesterday's logic." — Peter Drucker
+      </div>
+      <p>Contemporary issues in entrepreneurship refer to modern challenges and trends that affect how entrepreneurs start and run businesses in today’s changing world. 
+        These include technological change, digital transformation, sustainability, access to finance, regulatory policies, market competition, and the impact of 
+        globalization. For example, many entrepreneurs now must adapt to e-commerce and digital marketing instead of traditional sales methods, while others face 
+        challenges in securing funding due to economic uncertainty. Additionally, entrepreneurs are increasingly expected to consider environmental sustainability, 
+        such as starting eco-friendly businesses that reduce waste and pollution.</p>
+      
+      <h4 class="mt-4">The VUCA World Framework</h4>
+      <p>Modern entrepreneurs operate in a <span class="key-term">VUCA environment</span> (Volatility, Uncertainty, Complexity, Ambiguity), requiring adaptive strategies and resilient business models.</p>
+      
+      <div class="row mt-4">
+        <div class="col-md-3">
+          <div class="card text-center border-danger h-100">
+            <div class="card-header bg-danger text-white">
+              <h5 class="mb-0">Volatility</h5>
+            </div>
+            <div class="card-body">
+              <p>Rapid, unpredictable change in markets</p>
+              <div class="stat-badge bg-danger text-white">COVID-19 impact: 30% startups pivoted</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card text-center border-warning h-100">
+            <div class="card-header bg-warning text-dark">
+              <h5 class="mb-0">Uncertainty</h5>
+            </div>
+            <div class="card-body">
+              <p>Lack of predictability in outcomes</p>
+              <div class="stat-badge bg-warning text-dark">AI uncertainty: 60% job transformation</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card text-center border-info h-100">
+            <div class="card-header bg-info text-white">
+              <h5 class="mb-0">Complexity</h5>
+            </div>
+            <div class="card-body">
+              <p>Multiple interconnected factors</p>
+              <div class="stat-badge bg-info text-white">Supply chain: 5+ countries average</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card text-center border-success h-100">
+            <div class="card-header bg-success text-white">
+              <h5 class="mb-0">Ambiguity</h5>
+            </div>
+            <div class="card-body">
+              <p>Lack of clarity in cause-effect</p>
+              <div class="stat-badge bg-success text-white">Cryptocurrency: 70% regulatory ambiguity</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h5 class="mt-5">Key Contemporary Challenges</h5>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card framework-card">
+            <div class="card-body">
+              <h6 class="card-title text-danger">Technological Disruption</h6>
+              <ul>
+                <li><strong>AI & Automation:</strong> 47% of jobs at risk (World Economic Forum)</li>
+                <li><strong>Platform Economies:</strong> Uberization of traditional industries</li>
+                <li><strong>Blockchain:</strong> Decentralized business models emerging</li>
+                <li><strong>Metaverse:</strong> New virtual commerce opportunities</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card framework-card">
+            <div class="card-body">
+              <h6 class="card-title text-warning">Sustainability Imperative</h6>
+              <ul>
+                <li><strong>Climate Action:</strong> Net-zero commitments required</li>
+                <li><strong>Circular Economy:</strong> $4.5 trillion opportunity by 2030</li>
+                <li><strong>ESG Investing:</strong> $35 trillion in ESG assets globally</li>
+                <li><strong>Greenwashing Risks:</strong> Increased regulatory scrutiny</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <div class="card framework-card">
+            <div class="card-body">
+              <h6 class="card-title text-info">Geopolitical Shifts</h6>
+              <ul>
+                <li><strong>Supply Chain Resilience:</strong> Post-pandemic restructuring</li>
+                <li><strong>Digital Sovereignty:</strong> Data localization requirements</li>
+                <li><strong>Trade Wars:</strong> Impact on global startups</li>
+                <li><strong>Currency Volatility:</strong> Cryptocurrency as alternative</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card framework-card">
+            <div class="card-body">
+              <h6 class="card-title text-success">Social Transformation</h6>
+              <ul>
+                <li><strong>Remote Work:</strong> 74% of companies permanent remote</li>
+                <li><strong>Gen Z Values:</strong> Purpose over paycheck mentality</li>
+                <li><strong>Mental Health:</strong> 42% increase in wellness startups</li>
+                <li><strong>DEI Mandate:</strong> Diversity as competitive advantage</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Business Incubation -->
+  <section id="incubation" class="mb-5">
+     <br><br>
+    <div class="card shadow-sm p-4 border-0">
+      <h2 class="text-success mb-4">
+        <i class="bi bi-house-door-fill section-icon"></i>Business Incubation & Acceleration
+      </h2>
+      
+      <div class="scholar-quote">
+        "Incubators are the greenhouses where entrepreneurial seeds are nurtured into thriving businesses." — Joseph Schumpeter  
+      </div>
+      <p>Business incubation and acceleration are support systems designed to help new and early-stage ventures grow and succeed.
+           Business incubation focuses on nurturing startups in their early stages by providing resources such as workspace, mentorship,
+            training, and business guidance to help them develop viable business models. Business acceleration, on the other hand, targets
+             businesses that already exist but need rapid growth; it provides intensive mentorship, funding access, networking, and market
+              exposure over a short period. Together, incubation and acceleration help entrepreneurs reduce risks, improve innovation, and 
+              scale their businesses more effectively.</p>
+      
+      <h4 class="mt-4">The Incubation Ecosystem Evolution</h4>
+      <div class="evolution-timeline">
+        <div class="timeline-item">
+          <h5 class="text-success">1980s: First Generation</h5>
+          <p>Physical space + basic services. Focus: Real estate and shared infrastructure</p>
+          <div class="stat-badge bg-success text-white">Success rate: 20-30%</div>
+        </div>
+        
+        <div class="timeline-item">
+          <h5 class="text-success">1990s: Second Generation</h5>
+          <p>Business support services added. Focus: Mentoring and networking</p>
+          <div class="stat-badge bg-success text-white">Success rate: 30-40%</div>
+        </div>
+        
+        <div class="timeline-item">
+          <h5 class="text-success">2000s: Third Generation</h5>
+          <p>Sector-specific incubators. Focus: Technology commercialization</p>
+          <div class="stat-badge bg-success text-white">Success rate: 40-50%</div>
+        </div>
+        
+        <div class="timeline-item">
+          <h5 class="text-success">2010s: Fourth Generation</h5>
+          <p>Virtual incubation + global networks. Focus: Scalability and investment</p>
+          <div class="stat-badge bg-success text-white">Success rate: 50-60%</div>
+        </div>
+        
+        <div class="timeline-item">
+          <h5 class="text-success">2020s: Fifth Generation</h5>
+          <p>AI-powered + impact-focused. Focus: Sustainable scale and social impact</p>
+          <div class="stat-badge bg-success text-white">Success rate: 60-70%</div>
+        </div>
+      </div>
+      
+      <h5 class="mt-5">Incubation Models Comparison</h5>
+      <div class="table-responsive">
+        <table class="table table-hover comparison-table">
+          <thead>
+            <tr class="table-success">
+              <th>Model Type</th>
+              <th>Focus</th>
+              <th>Duration</th>
+              <th>Equity Taken</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>University-Based</strong></td>
+              <td>Research commercialization</td>
+              <td>2-3 years</td>
+              <td>0-5%</td>
+              <td>MIT Sandbox</td>
+            </tr>
+            <tr>
+              <td><strong>Corporate Incubator</strong></td>
+              <td>Strategic innovation</td>
+              <td>1-2 years</td>
+              <td>5-15%</td>
+              <td>Google Launchpad</td>
+            </tr>
+            <tr>
+              <td><strong>Government-Sponsored</strong></td>
+              <td>Economic development</td>
+              <td>3-5 years</td>
+              <td>0%</td>
+              <td>Startup Chile</td>
+            </tr>
+            <tr>
+              <td><strong>Private Accelerator</strong></td>
+              <td>Rapid scaling</td>
+              <td>3-6 months</td>
+              <td>5-10%</td>
+              <td>Y Combinator</td>
+            </tr>
+            <tr>
+              <td><strong>Virtual Incubator</strong></td>
+              <td>Global access</td>
+              <td>Flexible</td>
+              <td>0-3%</td>
+              <td>Founder Institute</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="concept-box mt-4">
+        <h5>📈 Impact Metrics of Incubators</h5>
+        <div class="row">
+          <div class="col-md-3 text-center">
+            <h3 class="text-success">87%</h3>
+            <p>Survival rate after 5 years</p>
+          </div>
+          <div class="col-md-3 text-center">
+            <h3 class="text-success">3.5x</h3>
+            <p>Faster job creation</p>
+          </div>
+          <div class="col-md-3 text-center">
+            <h3 class="text-success">2.8x</h3>
+            <p>Higher funding success</p>
+          </div>
+          <div class="col-md-3 text-center">
+            <h3 class="text-success">63%</h3>
+            <p>Women-led in incubators</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Entrepreneurship Education -->
+  <section id="education" class="mb-5">
+     <br><br>
+    <div class="card shadow-sm p-4 border-0">
+      <h2 class="text-warning mb-4">
+        <i class="bi bi-mortarboard-fill section-icon"></i>Entrepreneurship Education & Research
+      </h2>
+      
+      <div class="scholar-quote">
+        "Entrepreneurship is not magic, it's not mysterious, and it has nothing to do with genes. It's a discipline and, like any discipline, it can be learned." — Peter Drucker
+      </div>
+      <p>Entrepreneurship education and research focus on developing entrepreneurial knowledge, skills, and innovative thinking while also studying 
+        how entrepreneurship works in real-world settings. Entrepreneurship education equips students and aspiring entrepreneurs with abilities such
+         as opportunity identification, business planning, creativity, risk-taking, and financial management through courses, training, and practical projects. 
+         For example, a university offering a course where students create a startup business plan or run a small student enterprise helps them learn by doing. 
+         Entrepreneurship research, on the other hand, investigates how new businesses are created, how entrepreneurs make decisions, and what factors influence 
+         business success or failure. For instance, researchers may study why some startups grow faster than others or how innovation impacts economic development. 
+         Together, education and research strengthen entrepreneurial practice and contribute to business and economic growth.</p>
+      
+      <h4 class="mt-4">The Entrepreneurship Education Pyramid</h4>
+      <div class="text-center my-4">
+        <div class="d-flex flex-column align-items-center">
+          <div class="p-4 bg-warning text-white rounded-top" style="width: 80%;">
+            <h5 class="mb-0">APPLIED LEARNING (Capstone)</h5>
+            <p>Startup creation, venture labs, incubators</p>
+          </div>
+          <div class="p-4 bg-warning bg-opacity-75 text-dark" style="width: 70%;">
+            <h5 class="mb-0">SPECIALIZED SKILLS</h5>
+            <p>Finance, marketing, operations, leadership</p>
+          </div>
+          <div class="p-4 bg-warning bg-opacity-50 text-dark" style="width: 60%;">
+            <h5 class="mb-0">CORE CONCEPTS</h5>
+            <p>Opportunity recognition, business models, validation</p>
+          </div>
+          <div class="p-4 bg-warning bg-opacity-25 text-dark" style="width: 50%;">
+            <h5 class="mb-0">MINDSET DEVELOPMENT</h5>
+            <p>Creativity, resilience, risk-taking, ethics</p>
+          </div>
+          <div class="p-4 bg-light text-dark rounded-bottom" style="width: 100%;">
+            <h5 class="mb-0">FOUNDATION: ENTREPRENEURIAL THINKING</h5>
+            <p>Problem-solving, opportunity spotting, initiative</p>
+          </div>
+        </div>
+      </div>
+      
+      <h5 class="mt-4">Modern Pedagogical Approaches</h5>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-white">
+              <h6 class="mb-0">Experiential Learning (Kolb)</h6>
+            </div>
+            <div class="card-body">
+              <p><strong>Learning Cycle:</strong></p>
+              <ol>
+                <li>Concrete Experience</li>
+                <li>Reflective Observation</li>
+                <li>Abstract Conceptualization</li>
+                <li>Active Experimentation</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-white">
+              <h6 class="mb-0">Lean Startup Methodology</h6>
+            </div>
+            <div class="card-body">
+              <p><strong>Classroom Implementation:</strong></p>
+              <ul>
+                <li>Minimum Viable Projects</li>
+                <li>Customer Discovery Exercises</li>
+                <li>Pivot Simulations</li>
+                <li>Business Model Canvas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-white">
+              <h6 class="mb-0">Digital Transformation</h6>
+            </div>
+            <div class="card-body">
+              <p><strong>Emerging Tools:</strong></p>
+              <ul>
+                <li>VR Pitch Simulations</li>
+                <li>AI Business Plan Analysis</li>
+                <li>Blockchain for IP Education</li>
+                <li>Global Virtual Teams</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="concept-box mt-4">
+        <h5>🔬 Entrepreneurship Research Frontiers</h5>
+        <div class="row">
+          <div class="col-md-6">
+            <h6>Current Research Themes</h6>
+            <ul>
+              <li><strong>Digital Entrepreneurship:</strong> Platform ecosystems and AI</li>
+              <li><strong>Neuroscience of Entrepreneurship:</strong> Decision-making brain patterns</li>
+              <li><strong>Entrepreneurial Ecosystems:</strong> Regional development studies</li>
+              <li><strong>Failure Research:</strong> Learning from entrepreneurial failure</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h6>Research Impact Metrics</h6>
+            <ul>
+              <li><strong>Citation Impact:</strong> 40% increase in entrepreneurship citations</li>
+              <li><strong>Industry Collaboration:</strong> 60% of research now industry-partnered</li>
+              <li><strong>Policy Influence:</strong> 35 governments using entrepreneurship research</li>
+              <li><strong>Startup Creation:</strong> 1 in 5 research projects leads to venture</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Women Entrepreneurship -->
+  <section id="women" class="mb-5">
+     <br><br>
+    <div class="card shadow-sm p-4 border-0">
+      <h2 class="text-danger mb-4">
+        <i class="bi bi-gender-female section-icon"></i>Women & Entrepreneurship
+      </h2>
+      
+      <div class="scholar-quote">
+        "Investing in women entrepreneurs isn't just the right thing to do; it's the smart thing to do." — Hillary Clinton
+      </div>
+      <p>Women and entrepreneurship refer to the participation of women in starting, managing, and growing businesses. 
+        It emphasizes empowering women through access to education, finance, mentorship, and markets to overcome barriers 
+        such as gender bias and limited resources. For example, a woman starting a fashion or food-processing business with 
+        support from microfinance institutions or government programs illustrates women’s entrepreneurial engagement and economic empowerment.</p>
+      
+      <h4 class="mt-4">The Gender Entrepreneurship Gap: Data & Analysis</h4>
+      <div class="global-map">
+        <div class="row text-center">
+          <div class="col-md-4">
+            <h1 class="display-4">42%</h1>
+            <p>of global businesses are women-owned</p>
+          </div>
+          <div class="col-md-4">
+            <h1 class="display-4">2%</h1>
+            <p>of venture capital goes to women-led startups</p>
+          </div>
+          <div class="col-md-4">
+            <h1 class="display-4">63%</h1>
+            <p>higher ROI from women-led companies</p>
+          </div>
+        </div>
+      </div>
+      
+      <h5 class="mt-4">Barriers & Solutions Framework</h5>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card border-danger h-100">
+            <div class="card-header bg-danger text-white">
+              <h6 class="mb-0">Key Barriers (Brush et al., 2019)</h6>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li><strong>Funding Gap:</strong> Only 2.3% of VC funding to women founders</li>
+                <li><strong>Network Exclusion:</strong> 83% lack access to investor networks</li>
+                <li><strong>Bias in Evaluation:</strong> Identical pitches rated lower with female voices</li>
+                <li><strong>Double Bind:</strong> Perceived as less competent or too aggressive</li>
+                <li><strong>Care Responsibilities:</strong> 4.1x more domestic work than men</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="card border-success h-100">
+            <div class="card-header bg-success text-white">
+              <h6 class="mb-0">Proven Solutions</h6>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li><strong>Women-Focused Funds:</strong> $1.4B deployed by women-led VCs</li>
+                <li><strong>Blind Pitch Reviews:</strong> 60% increase in women funded</li>
+                <li><strong>Mentorship Programs:</strong> 92% success rate improvement</li>
+                <li><strong>Childcare Support:</strong> 45% higher venture creation</li>
+                <li><strong>Gender-Lens Investing:</strong> $3.4 trillion market opportunity</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h5 class="mt-4">Sectoral Distribution of Women Entrepreneurs</h5>
+      <div class="table-responsive mt-3">
+        <table class="table table-hover">
+          <thead class="table-danger">
+            <tr>
+              <th>Sector</th>
+              <th>% Women-Led</th>
+              <th>Growth Rate</th>
+              <th>Success Factors</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Health & Wellness</strong></td>
+              <td>68%</td>
+              <td>+15% annually</td>
+              <td>Purpose-driven, recession-resistant</td>
+            </tr>
+            <tr>
+              <td><strong>Education Technology</strong></td>
+              <td>55%</td>
+              <td>+22% annually</td>
+              <td>Digital transformation, social impact</td>
+            </tr>
+            <tr>
+              <td><strong>Sustainable Consumer Goods</strong></td>
+              <td>62%</td>
+              <td>+18% annually</td>
+              <td>Ethical consumption trends</td>
+            </tr>
+            <tr>
+              <td><strong>FinTech</strong></td>
+              <td>28%</td>
+              <td>+35% annually</td>
+              <td>High growth but funding challenged</td>
+            </tr>
+            <tr>
+              <td><strong>Deep Tech</strong></td>
+              <td>18%</td>
+              <td>+25% annually</td>
+              <td>High barriers, high potential</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="concept-box mt-4">
+        <h5>🌟 Success Stories & Role Models</h5>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h6>Whitney Wolfe Herd</h6>
+                <p class="mb-1"><small>Bumble</small></p>
+                <p>Youngest woman to take a company public at 31</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h6>Sarah Blakely</h6>
+                <p class="mb-1"><small>Spanx</small></p>
+                <p>Self-made billionaire, 100% ownership maintained</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h6>Rihanna</h6>
+                <p class="mb-1"><small>Fenty Beauty</small></p>
+                <p>$2.8B valuation, inclusive beauty revolution</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Rural Entrepreneurship -->
+  <section id="rural" class="mb-5">
+     <br><br>
+    <div class="card shadow-sm p-4 border-0">
+      <h2 class="text-info mb-4">
+        <i class="bi bi-tree-fill section-icon"></i>Rural Entrepreneurship
+      </h2>
+      
+      <div class="scholar-quote">
+        "The future of rural economies lies in entrepreneurship, not just agriculture." — Muhammad Yunus
+      </div>
+      <p>Rural entrepreneurship involves starting and running businesses in rural or village areas, often based on local resources 
+        such as agriculture, crafts, or natural products. It aims to create employment, reduce poverty, and improve living standards 
+        in rural communities. For instance, a farmer starting a small-scale dairy processing business or a crafts entrepreneur selling 
+        handmade products locally and online is an example of rural entrepreneurship.</p>
+      
+      <h4 class="mt-4">Rural vs. Urban Entrepreneurship Matrix</h4>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead class="table-info">
+            <tr>
+              <th>Aspect</th>
+              <th>Rural Entrepreneurship</th>
+              <th>Urban Entrepreneurship</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Resource Access</strong></td>
+              <td class="table-info">Natural resources abundant, human capital limited</td>
+              <td>Human capital abundant, natural resources limited</td>
+            </tr>
+            <tr>
+              <td><strong>Market Size</strong></td>
+              <td class="table-info">Local/regional focus, niche markets</td>
+              <td>National/global focus, mass markets</td>
+            </tr>
+            <tr>
+              <td><strong>Infrastructure</strong></td>
+              <td class="table-info">Digital infrastructure growing, physical limited</td>
+              <td>Comprehensive infrastructure</td>
+            </tr>
+            <tr>
+              <td><strong>Cost Structure</strong></td>
+              <td class="table-info">Lower operating costs, higher logistics costs</td>
+              <td>Higher operating costs, lower logistics costs</td>
+            </tr>
+            <tr>
+              <td><strong>Innovation Type</strong></td>
+              <td class="table-info">Appropriate technology, frugal innovation</td>
+              <td>Disruptive technology, R&D intensive</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <h5 class="mt-4">Rural Entrepreneurship Models</h5>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <h6 class="mb-0">Agri-Entrepreneurship</h6>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Precision farming technology</li>
+                <li>Organic and specialty crops</li>
+                <li>Farm-to-table businesses</li>
+                <li>Agricultural tourism</li>
+              </ul>
+              <div class="stat-badge bg-info text-white">$5T global market</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <h6 class="mb-0">Digital Rural Ventures</h6>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>E-commerce for local products</li>
+                <li>Remote work/service businesses</li>
+                <li>Online education platforms</li>
+                <li>Digital marketing agencies</li>
+              </ul>
+              <div class="stat-badge bg-info text-white">300% growth since 2020</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <h6 class="mb-0">Renewable Energy</h6>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Solar/wind microgrids</li>
+                <li>Biomass energy production</li>
+                <li>Energy efficiency services</li>
+                <li>Carbon credit trading</li>
+              </ul>
+              <div class="stat-badge bg-info text-white">$1.3T investment by 2030</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="concept-box mt-4">
+        <h5>🏆 Success Factors for Rural Entrepreneurship</h5>
+        <div class="row">
+          <div class="col-md-6">
+            <h6>Digital Enablers</h6>
+            <ul>
+              <li><strong>Satellite Internet:</strong> Starlink reducing connectivity gap by 80%</li>
+              <li><strong>Mobile Payment:</strong> 85% of rural transactions now digital</li>
+              <li><strong>E-commerce Platforms:</strong> Amazon Rural reaching 40,000 villages</li>
+              <li><strong>Digital Skills Training:</strong> 2.5M rural youth trained annually</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h6>Policy Support</h6>
+            <ul>
+              <li><strong>Rural Business Incubators:</strong> 500+ established globally</li>
+              <li><strong>Tax Incentives:</strong> 30% tax breaks for rural startups</li>
+              <li><strong>Infrastructure Investment:</strong> $150B committed to rural digital</li>
+              <li><strong>Land Rights:</strong> Secure tenure increasing investment 3x</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Social Entrepreneurship -->
+  <section id="social" class="mb-5">
+     <br><br>
+    <div class="card shadow-sm p-4 border-0">
+      <h2 class="text-purple mb-4">
+        <i class="bi bi-heart-fill section-icon"></i>Social Entrepreneurship
+      </h2>
+      
+      <div class="scholar-quote">
+        "Social entrepreneurs are not content just to give a fish or teach how to fish. They will not rest until they have revolutionized the fishing industry." — Bill Drayton, Ashoka
+      </div>
+      <p>Social entrepreneurship focuses on solving social, environmental, or community problems through innovative business approaches rather than just making profit. 
+        Social entrepreneurs aim to create positive social impact while ensuring financial sustainability. For example, an entrepreneur who creates a business that 
+        provides affordable clean water or low-cost solar energy to poor communities is practicing social entrepreneurship.</p>
+      
+      <h4 class="mt-4">The Social Enterprise Spectrum</h4>
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <div class="text-center">
+          <div class="p-3 bg-purple text-white rounded-circle" style="width: 100px; height: 100px;">
+            <h5 class="mb-0">Pure Philanthropy</h5>
+          </div>
+          <p class="mt-2">100% Social<br>0% Commercial</p>
+        </div>
+        
+        <div class="flex-grow-1 border-top border-3 border-purple"></div>
+        
+        <div class="text-center">
+          <div class="p-3 bg-purple bg-opacity-75 text-white rounded-circle" style="width: 100px; height: 100px;">
+            <h5 class="mb-0">Social Purpose</h5>
+          </div>
+          <p class="mt-2">70% Social<br>30% Commercial</p>
+        </div>
+        
+        <div class="flex-grow-1 border-top border-3 border-purple"></div>
+        
+        <div class="text-center">
+          <div class="p-3 bg-purple bg-opacity-50 text-dark rounded-circle" style="width: 100px; height: 100px;">
+            <h5 class="mb-0">Hybrid</h5>
+          </div>
+          <p class="mt-2">50% Social<br>50% Commercial</p>
+        </div>
+        
+        <div class="flex-grow-1 border-top border-3 border-purple"></div>
+        
+        <div class="text-center">
+          <div class="p-3 bg-purple bg-opacity-25 text-dark rounded-circle" style="width: 100px; height: 100px;">
+            <h5 class="mb-0">Socially Responsible</h5>
+          </div>
+          <p class="mt-2">30% Social<br>70% Commercial</p>
+        </div>
+        
+        <div class="flex-grow-1 border-top border-3 border-purple"></div>
+        
+        <div class="text-center">
+          <div class="p-3 bg-light text-dark rounded-circle" style="width: 100px; height: 100px;">
+            <h5 class="mb-0">Traditional Business</h5>
+          </div>
+          <p class="mt-2">CSR Only<br>Profit Focused</p>
+        </div>
+      </div>
+      
+      <h5 class="mt-4">Impact Measurement Frameworks</h5>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-header bg-purple text-white">
+              <h6 class="mb-0">Theory of Change</h6>
+            </div>
+            <div class="card-body">
+              <p><strong>Components:</strong></p>
+              <ol>
+                <li>Identify long-term goals</li>
+                <li>Backward map prerequisites</li>
+                <li>Identify assumptions</li>
+                <li>Develop indicators</li>
+                <li>Write narrative</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-header bg-purple text-white">
+              <h6 class="mb-0">Social Return on Investment (SROI)</h6>
+            </div>
+            <div class="card-body">
+              <p><strong>Calculation:</strong></p>
+              <p>SROI = (Social Value Created) / (Investment)</p>
+              <div class="mt-3">
+                <div class="stat-badge bg-purple text-white">Example: 3:1 SROI</div>
+                <p><small>Every $1 creates $3 in social value</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-header bg-purple text-white">
+              <h6 class="mb-0">IRIS+ Metrics (GIIN)</h6>
+            </div>
+            <div class="card-body">
+              <p><strong>Standardized Categories:</strong></p>
+              <ul>
+                <li>Financial Performance</li>
+                <li>Operational Impact</li>
+                <li>Product Impact</li>
+                <li>Social & Environmental</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="concept-box mt-4">
+        <h5>🌍 Global Social Entrepreneurship Trends</h5>
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <h3 class="text-purple">11,000+</h3>
+            <p>Certified B Corporations globally</p>
+          </div>
+          <div class="col-md-4 text-center">
+            <h3 class="text-purple">$715B</h3>
+            <p>Impact investing market size</p>
+          </div>
+          <div class="col-md-4 text-center">
+            <h3 class="text-purple">40%</h3>
+            <p>Annual growth in social enterprises</p>
+          </div>
+        </div>
+        
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <h6>Leading Sectors</h6>
+            <ul>
+              <li><strong>Clean Energy:</strong> 45% of social enterprise activity</li>
+              <li><strong>Financial Inclusion:</strong> Serving 1.7B unbanked people</li>
+              <li><strong>Affordable Healthcare:</strong> 300M patients served annually</li>
+              <li><strong>Education:</strong> 50M students in social enterprise schools</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h6>Innovation Models</h6>
+            <ul>
+              <li><strong>Cross-Subsidy:</strong> Profitable services fund social programs</li>
+              <li><strong>Pay-for-Success:</strong> Government pays for proven outcomes</li>
+              <li><strong>Blockchain for Good:</strong> Transparent impact tracking</li>
+              <li><strong>Crowdfunding:</strong> $6.5B raised for social projects</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Globalization & Virtual Enterprises -->
+  <section id="global" class="mb-5">
+     <br><br>
+    <div class="card shadow-sm p-4 border-0">
+      <h2 class="text-dark mb-4">
+        <i class="bi bi-globe section-icon"></i>Globalization & Virtual Enterprises
+      </h2>
+      
+      <div class="scholar-quote">
+        "The world is flat." — Thomas Friedman
+      </div>
+      <p>Globalization and virtual enterprises refer to businesses that operate across borders and rely on digital technology 
+        rather than physical offices. These enterprises use the internet, cloud systems, and online platforms to collaborate, 
+        sell, and deliver services worldwide. For example, a freelance IT company with team members in different countries working 
+        remotely and serving international clients represents a virtual enterprise in a globalized business environment.</p>
+      
+      <h4 class="mt-4">The Virtual Enterprise Architecture</h4>
+      <div class="global-map">
+        <div class="row text-center">
+          <div class="col-md-3">
+            <i class="bi bi-cloud-fill display-4"></i>
+            <h5>Cloud Infrastructure</h5>
+            <p>Global scalability</p>
+          </div>
+          <div class="col-md-3">
+            <i class="bi bi-people-fill display-4"></i>
+            <h5>Distributed Teams</h5>
+            <p>24/7 operations</p>
+          </div>
+          <div class="col-md-3">
+            <i class="bi bi-shield-fill display-4"></i>
+            <h5>Digital Security</h5>
+            <p>Global compliance</p>
+          </div>
+          <div class="col-md-3">
+            <i class="bi bi-currency-exchange display-4"></i>
+            <h5>Borderless Finance</h5>
+            <p>Multi-currency operations</p>
+          </div>
+        </div>
+      </div>
+      
+      <h5 class="mt-4">Born-Global vs Traditional Internationalization</h5>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>Characteristic</th>
+              <th>Born-Global Enterprise</th>
+              <th>Traditional Internationalization</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Time to Global</strong></td>
+              <td class="table-info">Immediate (0-3 years)</td>
+              <td>Gradual (5-20 years)</td>
+            </tr>
+            <tr>
+              <td><strong>Market Approach</strong></td>
+              <td class="table-info">Multiple markets simultaneously</td>
+              <td>Sequential market entry</td>
+            </tr>
+            <tr>
+              <td><strong>Resource Leverage</strong></td>
+              <td class="table-info">Digital, network, intellectual</td>
+              <td>Financial, physical, human</td>
+            </tr>
+            <tr>
+              <td><strong>Organizational Structure</strong></td>
+              <td class="table-info">Virtual, networked, flat</td>
+              <td>Hierarchical, centralized</td>
+            </tr>
+            <tr>
+              <td><strong>Competitive Advantage</strong></td>
+              <td class="table-info">Speed, innovation, agility</td>
+              <td>Scale, brand, distribution</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <h5 class="mt-4">Virtual Enterprise Success Factors</h5>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-header bg-dark text-white">
+              <h6 class="mb-0">Technology Stack</h6>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li><strong>Communication:</strong> Slack, Zoom, Teams</li>
+                <li><strong>Collaboration:</strong> Notion, Asana, Trello</li>
+                <li><strong>Cloud Services:</strong> AWS, Google Cloud, Azure</li>
+                <li><strong>Security:</strong> VPNs, encryption, 2FA</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-header bg-dark text-white">
+              <h6 class="mb-0">Global Operations</h6>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li><strong>Legal Structure:</strong> Delaware C-Corp + local entities</li>
+                <li><strong>Payment Processing:</strong> Stripe, PayPal, Wise</li>
+                <li><strong>Compliance:</strong> GDPR, CCPA, local regulations</li>
+                <li><strong>Tax Optimization:</strong> Digital tax strategies</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-header bg-dark text-white">
+              <h6 class="mb-0">Talent Management</h6>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li><strong>Remote Hiring:</strong> LinkedIn, AngelList, RemoteOK</li>
+                <li><strong>Culture Building:</strong> Virtual retreats, digital rituals</li>
+                <li><strong>Time Zone Management:</strong> Async communication norms</li>
+                <li><strong>Compensation:</strong> Global pay scales + equity</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="concept-box mt-4">
+        <h5>🚀 Future Trends: Web 3.0 & Metaverse Enterprises</h5>
+        <div class="row">
+          <div class="col-md-6">
+            <h6>Web 3.0 Opportunities</h6>
+            <ul>
+              <li><strong>DAO Governance:</strong> Decentralized Autonomous Organizations</li>
+              <li><strong>NFT Marketplaces:</strong> $25B market by 2025</li>
+              <li><strong>DeFi Platforms:</strong> $100B+ total value locked</li>
+              <li><strong>Tokenization:</strong> Asset fractionalization and liquidity</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h6>Metaverse Commerce</h6>
+            <ul>
+              <li><strong>Virtual Real Estate:</strong> $1B+ in land sales</li>
+              <li><strong>Digital Fashion:</strong> $50B market by 2030</li>
+              <li><strong>Virtual Events:</strong> 400M+ monthly active users</li>
+              <li><strong>Remote Work 3.0:</strong> Virtual offices and collaboration</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="row mt-3">
+          <div class="col-md-4 text-center">
+            <div class="stat-badge bg-dark text-white">$30T</div>
+            <p>Digital economy by 2025</p>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="stat-badge bg-dark text-white">75%</div>
+            <p>Of businesses will be borderless by 2027</p>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="stat-badge bg-dark text-white">3.2B</div>
+            <p>Digital workers globally by 2030</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Exercises Section -->
+  <section id="exercises" class="mb-5">
+     <br><br>
+    <div class="card shadow-sm p-4 border-0">
+      <h2 class="text-secondary mb-4">
+        <i class="bi bi-pencil-fill section-icon"></i>Interactive Exercises & Case Studies
+      </h2>
+      
+      <div class="accordion" id="exercisesAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#exercise1">
+              Exercise 1: Design a Virtual Incubator
+            </button>
+          </h2>
+          <div id="exercise1" class="accordion-collapse collapse show" data-bs-parent="#exercisesAccordion">
+            <div class="accordion-body">
+              <p><strong>Scenario:</strong> Create a virtual incubator for rural women entrepreneurs in Southeast Asia.</p>
+              <ol>
+                <li>Design the digital platform architecture</li>
+                <li>Outline the 6-month program curriculum</li>
+                <li>Identify key technology tools needed</li>
+                <li>Create a funding model (grants, equity, revenue share)</li>
+                <li>Design impact measurement framework</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#exercise2">
+              Exercise 2: Social Enterprise Business Plan
+            </button>
+          </h2>
+          <div id="exercise2" class="accordion-collapse collapse" data-bs-parent="#exercisesAccordion">
+            <div class="accordion-body">
+              <p><strong>Challenge:</strong> Develop a business plan for a social enterprise addressing food waste in urban areas.</p>
+              <ul>
+                <li>Calculate SROI for different intervention models</li>
+                <li>Design a hybrid revenue model (earned income + grants)</li>
+                <li>Create a digital marketing strategy for impact awareness</li>
+                <li>Outline partnerships with corporations and NGOs</li>
+                <li>Develop a 3-year scaling plan</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#exercise3">
+              Exercise 3: Born-Global Startup Simulation
+            </button>
+          </h2>
+          <div id="exercise3" class="accordion-collapse collapse" data-bs-parent="#exercisesAccordion">
+            <div class="accordion-body">
+              <p><strong>Simulation:</strong> You're launching an AI-powered education platform targeting 5 countries simultaneously.</p>
+              <ol>
+                <li>Choose your initial 5 markets and justify selection</li>
+                <li>Design the virtual team structure across time zones</li>
+                <li>Create a global compliance checklist</li>
+                <li>Develop a multi-currency pricing strategy</li>
+                <li>Outline intellectual property protection across jurisdictions</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="concept-box mt-4">
+        <h5>📝 Discussion Questions</h5>
+        <ol>
+          <li>How can digital technologies reduce the urban-rural entrepreneurship divide?</li>
+          <li>What policy changes are needed to support women entrepreneurs in your region?</li>
+          <li>How should entrepreneurship education evolve for the Web 3.0 economy?</li>
+          <li>What ethical considerations arise in virtual global enterprises?</li>
+          <li>How can traditional businesses transition to social enterprise models?</li>
+          <li>What role should governments play in supporting business incubation?</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Summary & Key Takeaways -->
+  <section class="mb-5">
+    <div class="card shadow-sm p-4 border-0 bg-primary text-white">
+      <h2 class="mb-4">Key Takeaways</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card bg-white text-dark h-100">
+            <div class="card-body">
+              <h5 class="card-title">Digital Transformation</h5>
+              <p class="card-text">Virtual enterprises and digital tools are democratizing entrepreneurship globally.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-white text-dark h-100">
+            <div class="card-body">
+              <h5 class="card-title">Inclusive Ecosystems</h5>
+              <p class="card-text">Women, rural, and social entrepreneurship are driving equitable economic growth.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-white text-dark h-100">
+            <div class="card-body">
+              <h5 class="card-title">Education Evolution</h5>
+              <p class="card-text">Entrepreneurship education must prepare for Web 3.0 and global virtual operations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="bg-dark text-white py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h5>© 2026 e-SOBlib |Contemporary Entrepreneurship Issues</h5>
+        <p class="mb-0"><small>Comprehensive notes covering modern entrepreneurial challenges and opportunities</small></p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <p class="mb-0"><small>References: Drucker, Schumpeter, Friedman, Yunus, Drayton, Brush, Christensen</small></p>
+        <p class="mb-0"><small>Data Sources: World Bank, OECD, GEM, Crunchbase, PitchBook</small></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add interactive data point highlighting
+    document.querySelectorAll('.data-point').forEach(point => {
+      point.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.02)';
+        this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+      });
+      
+      point.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+        this.style.boxShadow = '0 2px 4px rgba(0,0,0,0.05)';
+      });
+    });
+    
+    // Add section tracking for navigation
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    
+    window.addEventListener('scroll', () => {
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (scrollY >= sectionTop - 100) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+    
+    // Add copy to clipboard for key terms
+    document.querySelectorAll('.key-term').forEach(term => {
+      term.title = 'Click to copy term';
+      term.style.cursor = 'pointer';
+      
+      term.addEventListener('click', function() {
+        const text = this.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          const original = this.textContent;
+          this.textContent = '✓ Copied!';
+          setTimeout(() => {
+            this.textContent = original;
+          }, 1500);
+        });
+      });
+    });
+  });
+</script>
+</body>
+</html>
