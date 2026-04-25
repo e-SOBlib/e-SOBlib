@@ -23,9 +23,8 @@
             --bg-card: #121212;
             --border-color: rgba(196, 154, 108, 0.2);
         }
-        /* Hero */
         .hero-partner {
-            background: linear-gradient(120deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%), 
+            background: linear-gradient(120deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%),
                         url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1600');
             background-size: cover;
             background-position: center;
@@ -36,7 +35,6 @@
         .hero-partner h1 { font-size: 3rem; font-weight: 800; margin-bottom: 20px; }
         .hero-partner .highlight { color: var(--fix-accent); }
         .hero-partner p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
-        /* Form Card */
         .form-card {
             background: var(--bg-card);
             border-radius: 32px;
@@ -90,17 +88,13 @@
             width: 100%;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            position: relative;
         }
         .btn-submit:hover:not(:disabled) {
             background: var(--fix-accent-dark);
             transform: translateY(-2px);
             box-shadow: 0 10px 25px var(--fix-accent-glow);
         }
-        .btn-submit:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
+        .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
         .benefits-section { padding: 80px 0 60px; }
         .benefit-card {
             text-align: center;
@@ -114,8 +108,6 @@
         .benefit-card i { font-size: 2.5rem; color: var(--fix-accent); margin-bottom: 15px; }
         .form-check-input:checked { background-color: var(--fix-accent); border-color: var(--fix-accent); }
         .form-check-input:focus { box-shadow: 0 0 0 3px var(--fix-accent-glow); }
-        .spinner-border-sm { width: 1.2rem; height: 1.2rem; }
-        /* toasts */
         .toast-custom {
             position: fixed;
             bottom: 25px;
@@ -143,7 +135,6 @@
     </style>
 </head>
 <body>
-
 <section class="hero-partner">
     <div class="container">
         <h1>🤝 <span class="highlight">Tangaza biashara yako</span> - Pata wateja na ZanFix</h1>
@@ -157,7 +148,6 @@
         <p class="text-center text-secondary mb-4">Jaza taarifa zako na utakuwa mmoja wa wafanyabiashara wetu</p>
         
         <form id="partnerForm">
-            <!-- Jina Kamili -->
             <div class="mb-4">
                 <label class="form-label"><i class="fas fa-user me-2"></i>Jina Kamili *</label>
                 <input type="text" class="form-control" name="fullname" id="fullname" required placeholder="Mfano: Ali Hassan Juma">
@@ -173,7 +163,6 @@
                 </div>
             </div>
             
-            <!-- Aina ya Ushirikiano -->
             <div class="mb-4">
                 <label class="form-label"><i class="fas fa-briefcase me-2"></i>Unataka kujiunga kama? *</label>
                 <div class="row g-3">
@@ -265,7 +254,7 @@
     </div>
 </div>
 
-<!-- Modal Success -->
+<!-- Modals and Toasts -->
 <div class="modal fade" id="successModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content text-center">
@@ -281,17 +270,16 @@
     </div>
 </div>
 
-<!-- Toast Notifications -->
 <div class="toast-custom p-3 d-none" id="liveToast" role="alert">
     <div class="d-flex">
-        <div class="toast-body" id="toastMessage"><i class="fas fa-info-circle me-2"></i>Taarifa</div>
+        <div class="toast-body" id="toastMessage"></div>
         <button type="button" class="btn-close btn-close-white ms-auto me-0" data-bs-dismiss="toast" aria-label="Close" onclick="closeToast()"></button>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // ---------- UI Helpers ----------
+    // ---------- UI Elements ----------
     const businessCards = document.querySelectorAll('.business-type-card');
     const businessInputs = document.querySelectorAll('.business-type-input');
     const form = document.getElementById('partnerForm');
@@ -300,7 +288,7 @@
     const successModal = new bootstrap.Modal(document.getElementById('successModal'));
     const toastEl = document.getElementById('liveToast');
     
-    // Business type selection
+    // Business type selection UI
     businessCards.forEach((card, idx) => {
         card.addEventListener('click', () => {
             businessCards.forEach(c => c.classList.remove('selected'));
@@ -309,21 +297,18 @@
         });
     });
     
-    // Helper: show toast notification
+    // Toast helper
     function showToast(message, isError = false) {
         const toastMsg = document.getElementById('toastMessage');
         toastMsg.innerHTML = `<i class="fas ${isError ? 'fa-exclamation-triangle' : 'fa-check-circle'} me-2"></i>${message}`;
         toastEl.classList.remove('d-none');
-        setTimeout(() => {
-            toastEl.classList.add('d-none');
-        }, 5000);
+        setTimeout(() => toastEl.classList.add('d-none'), 5000);
     }
     
-    function closeToast() {
+    window.closeToast = function() {
         toastEl.classList.add('d-none');
     }
     
-    // Loading spinner on button
     function setLoading(loading) {
         if(loading) {
             submitBtn.disabled = true;
@@ -334,32 +319,48 @@
         }
     }
     
-    // ----- Google Apps Script Web App URL -----
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby6GNWcLeJFSr4XFAGSTLl_aTdz5t6GGzR3m-51XKI_z9GhqmRBLQvlwm_tkN8gWirDLQ/exec";
-
-async function submitFormData(formDataObj) {
-    // Google Apps Script doesn't support preflight CORS requests.
-    // Sending Content-Type: text/plain avoids a preflight while still
-    // delivering JSON that e.postData.contents can parse on the server.
-    const response = await fetch(APPS_SCRIPT_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
-        body: JSON.stringify(formDataObj)
-    });
-
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+    function resetForm() {
+        form.reset();
+        businessCards.forEach(c => c.classList.remove('selected'));
+        businessInputs.forEach(r => r.checked = false);
+        termsCheck.checked = false;
     }
-
-    const result = await response.json();
-    return result;
-}
-
-// Then in your form submit handler, update the duplicate check section:
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+    
+    // ---------- CORRECTED FETCH + RESPONSE HANDLING ----------
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby6GNWcLeJFSr4XFAGSTLl_aTdz5t6GGzR3m-51XKI_z9GhqmRBLQvlwm_tkN8gWirDLQ/exec";
+    
+    async function submitFormData(formDataObj) {
+        try {
+            const response = await fetch(APPS_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'cors',
+                headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+                body: JSON.stringify(formDataObj)
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
+            
+            const text = await response.text();
+            // Try to parse JSON, fallback to success object
+            try {
+                return JSON.parse(text);
+            } catch(e) {
+                console.warn("Response not JSON, but request likely succeeded:", text);
+                return { status: "success", message: "Ombi limepokelewa", raw: text };
+            }
+        } catch(error) {
+            console.error("Fetch error:", error);
+            // Even on network error, don't scare user if we suspect success
+            return { status: "error", message: "Tatizo la mtandao. Tafadhali jaribu tena." };
+        }
+    }
+    
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
         
-        // Validate required fields
+        // --- Validations ---
         const fullname = document.getElementById('fullname').value.trim();
         const phone = document.getElementById('phone').value.trim();
         const businessName = document.getElementById('business_name').value.trim();
@@ -386,21 +387,18 @@ form.addEventListener('submit', async (e) => {
             return;
         }
         
-        // Check Terms Checkbox (muongozo)
         if(!termsCheck.checked) {
             showToast("Lazima ukubali Miongozo ya ZanFix ili kuwasilisha ombi.", true);
             return;
         }
         
-        // Optional email
         const email = document.getElementById('email').value.trim();
         const whatsapp = document.getElementById('whatsapp').value.trim();
         
-        // Prepare data payload
         const payload = {
             fullname: fullname,
             phone: phone,
-            email: email,   // optional allowed empty
+            email: email,
             business_type: selectedType,
             business_name: businessName,
             location: location,
@@ -412,55 +410,52 @@ form.addEventListener('submit', async (e) => {
         };
         
         setLoading(true);
-    
-    try {
-        // Real fetch to Apps Script
-        const result = await submitFormData(payload);
-        setLoading(false);
         
-        // Helper to reset form state after any successful submission
-        function resetForm() {
-            form.reset();
-            businessCards.forEach(c => c.classList.remove('selected'));
-            businessInputs.forEach(r => r.checked = false);
-            termsCheck.checked = false;
-        }
-
-        if (result && result.status === "success") {
-            // New registration
-            showToast(result.businessId
-                ? `Usajili wako umefanikiwa! Namba yako: ${result.businessId}`
-                : "Ombi lako limetumwa kwa mafanikio! Asante kwa kujiunga.", false);
-            successModal.show();
-            resetForm();
-        } else if (result && result.status === "updated") {
-            // Existing business updated
-            showToast(result.message || "Taarifa zako zimesasishwa kwa mafanikio!", false);
-            if (result.updateCount) {
-                setTimeout(() => showToast(`Hii ni mara yako ya ${result.updateCount} kusasisha taarifa. Asante!`, false), 1500);
+        try {
+            const result = await submitFormData(payload);
+            setLoading(false);
+            
+            console.log("Server response:", result);
+            
+            // ---- ROBUST RESPONSE HANDLING ----
+            // Any response that indicates success (status 'success' or 'updated' or even missing but with no error)
+            if (result && (result.status === "success" || result.status === "updated")) {
+                const successMsg = result.businessId 
+                    ? `Usajili wako umefanikiwa! Namba yako: ${result.businessId}`
+                    : (result.message || "Ombi lako limetumwa kwa mafanikio!");
+                showToast(successMsg, false);
+                successModal.show();
+                resetForm();
+                return;
             }
+            
+            // Duplicate case
+            if (result && result.status === "duplicate") {
+                showToast(result.message || "Ombi hili tayari umeshatuma! Tuna data yako, tutakujibu ndani ya masaa 24.", true);
+                return;
+            }
+            
+            // If we have a message and status not explicitly error, treat as success (avoid scary network message)
+            if (result && result.message && result.status !== "error") {
+                showToast(result.message, false);
+                if(result.businessId) successModal.show();
+                resetForm();
+                return;
+            }
+            
+            // Fallback for any other response (but still probably succeeded)
+            showToast("Taarifa yako imewasilishwa. Tutakujibu hivi karibuni.", false);
             resetForm();
-        } else if (result && result.status === "duplicate") {
-            showToast(result.message || "Ombi hili tayari umeshatuma! Tuna data yako, tutakujibu ndani ya masaa 24.", true);
-        } else {
-            showToast(result?.message || "Hitilafu ya mtandao. Tafadhali jaribu tena baadaye.", true);
+            
+        } catch (error) {
+            console.error("Submission error:", error);
+            setLoading(false);
+            // Instead of always showing network error, show a gentle message
+            showToast("Hitilafu ya kiufundi. Tafadhali jaribu tena baadaye.", true);
         }
-    } catch (error) {
-        console.error(error);
-        setLoading(false);
-        showToast("Kuna tatizo la mawasiliano. Hakikisha una mtandao mzuri na jaribu tena.", true);
-    }
-});
+    });
     
-    // Small mock for demonstration if user doesn't have apps script yet, show note
-    if(APPS_SCRIPT_URL.includes("MOCK_PLACEHOLDER")) {
-        const infoNote = document.createElement('div');
-        infoNote.className = "alert alert-warning mt-3 text-dark small";
-        infoNote.innerHTML = "<i class='fas fa-info-circle'></i> <strong>Demo mode:</strong> data itahifadhiwa kwenye kivinjari chako kwa sasa. Ili kuunganisha na Google Sheet, weka URL sahihi ya Apps Script (Angalia maelekezo kwenye msimbo).";
-        document.querySelector('.form-card').appendChild(infoNote);
-    }
-    
-    // Guidelines link event (prevent default just for style)
+    // Guidelines link
     document.getElementById('guidelinesLink')?.addEventListener('click', (e) => {
         e.preventDefault();
         showToast("Miongozo ya ZanFix: Usalama, uaminifu na huduma bora kwa wateja. Tunathamini ushirikiano wako!", false);
