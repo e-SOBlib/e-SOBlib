@@ -60,7 +60,7 @@
             background: #252525;
             border-color: var(--fix-accent);
             box-shadow: 0 0 0 3px var(--fix-accent-glow);
-            color: #eaeaea;
+            color: #ffffff;
         }
         .business-type-card {
             background: #1e1e1e;
@@ -118,7 +118,33 @@
             color: #eaeaea;
             border-radius: 16px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            
         }
+        /* Improve placeholder visibility */
+::placeholder {
+    color: #bfbfbf; /* light gray */
+    opacity: 1; /* override default fade */
+}
+
+:-ms-input-placeholder { color: #bfbfbf; } /* old IE */
+::-ms-input-placeholder { color: #bfbfbf; } /* Edge legacy */
+
+/* Dark mode inputs specifically */
+.form-control::placeholder,
+.form-select::placeholder {
+    color: #cfcfcf;
+    opacity: 1;
+}
+
+/* When focused, slightly dim to avoid confusion with typed text */
+.form-control:focus::placeholder,
+.form-select:focus::placeholder {
+    color: #888;
+}
+.form-control::placeholder {
+    letter-spacing: 0.3px;
+    font-weight: 400;
+}
         @media (max-width: 768px) {
             .hero-partner h1 { font-size: 2rem; }
             .form-card { padding: 25px; margin-top: -40px; }
@@ -327,7 +353,7 @@
     }
     
     // ---------- CORRECTED FETCH + RESPONSE HANDLING ----------
-    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxEuUUPVy0LCQvbmLNQrsG6PUpnIX8gQ1zA4-7aIjlnNLHoTQhYlxY5IQRx9h44OR1-Bg/exec";
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyhI2qBpZT2nAG7r6p5ChRM8uSsVoCGGYm2_EuT1OKAk61fepTLvBh94u2eSf3fWnhORw/exec";
     
     async function submitFormData(formDataObj) {
         try {
