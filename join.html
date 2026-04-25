@@ -23,9 +23,8 @@
             --bg-card: #121212;
             --border-color: rgba(196, 154, 108, 0.2);
         }
-        /* Hero */
         .hero-partner {
-            background: linear-gradient(120deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%), 
+            background: linear-gradient(120deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%),
                         url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1600');
             background-size: cover;
             background-position: center;
@@ -36,7 +35,6 @@
         .hero-partner h1 { font-size: 3rem; font-weight: 800; margin-bottom: 20px; }
         .hero-partner .highlight { color: var(--fix-accent); }
         .hero-partner p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
-        /* Form Card */
         .form-card {
             background: var(--bg-card);
             border-radius: 32px;
@@ -62,7 +60,7 @@
             background: #252525;
             border-color: var(--fix-accent);
             box-shadow: 0 0 0 3px var(--fix-accent-glow);
-            color: #eaeaea;
+            color: #ffffff;
         }
         .business-type-card {
             background: #1e1e1e;
@@ -90,17 +88,13 @@
             width: 100%;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            position: relative;
         }
         .btn-submit:hover:not(:disabled) {
             background: var(--fix-accent-dark);
             transform: translateY(-2px);
             box-shadow: 0 10px 25px var(--fix-accent-glow);
         }
-        .btn-submit:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
+        .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
         .benefits-section { padding: 80px 0 60px; }
         .benefit-card {
             text-align: center;
@@ -114,8 +108,6 @@
         .benefit-card i { font-size: 2.5rem; color: var(--fix-accent); margin-bottom: 15px; }
         .form-check-input:checked { background-color: var(--fix-accent); border-color: var(--fix-accent); }
         .form-check-input:focus { box-shadow: 0 0 0 3px var(--fix-accent-glow); }
-        .spinner-border-sm { width: 1.2rem; height: 1.2rem; }
-        /* toasts */
         .toast-custom {
             position: fixed;
             bottom: 25px;
@@ -126,6 +118,15 @@
             color: #eaeaea;
             border-radius: 16px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+        ::placeholder {
+            color: #bfbfbf;
+            opacity: 1;
+        }
+        .form-control::placeholder,
+        .form-select::placeholder {
+            color: #cfcfcf;
+            opacity: 1;
         }
         @media (max-width: 768px) {
             .hero-partner h1 { font-size: 2rem; }
@@ -140,10 +141,55 @@
         .btn-outline-accent:hover { background: var(--fix-accent); color: #0a0a0a; }
         a { text-decoration: none; color: var(--fix-accent); }
         a:hover { color: var(--fix-accent-dark); }
+        
+        /* Debug panel styles */
+        .debug-panel {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background: #1a1a1a;
+            border: 1px solid #c49a6c;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 11px;
+            font-family: monospace;
+            z-index: 2000;
+            max-height: 200px;
+            overflow-y: auto;
+            display: none;
+        }
+        .debug-panel.show {
+            display: block;
+        }
+        .debug-panel .debug-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #333;
+        }
+        .debug-panel pre {
+            margin: 0;
+            color: #0f0;
+            white-space: pre-wrap;
+        }
+        .btn-debug {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: #c49a6c;
+            color: #000;
+            border: none;
+            border-radius: 20px;
+            padding: 5px 12px;
+            font-size: 11px;
+            cursor: pointer;
+            z-index: 2001;
+        }
     </style>
 </head>
 <body>
-
 <section class="hero-partner">
     <div class="container">
         <h1>🤝 <span class="highlight">Tangaza biashara yako</span> - Pata wateja na ZanFix</h1>
@@ -157,7 +203,6 @@
         <p class="text-center text-secondary mb-4">Jaza taarifa zako na utakuwa mmoja wa wafanyabiashara wetu</p>
         
         <form id="partnerForm">
-            <!-- Jina Kamili -->
             <div class="mb-4">
                 <label class="form-label"><i class="fas fa-user me-2"></i>Jina Kamili *</label>
                 <input type="text" class="form-control" name="fullname" id="fullname" required placeholder="Mfano: Ali Hassan Juma">
@@ -173,7 +218,6 @@
                 </div>
             </div>
             
-            <!-- Aina ya Ushirikiano -->
             <div class="mb-4">
                 <label class="form-label"><i class="fas fa-briefcase me-2"></i>Unataka kujiunga kama? *</label>
                 <div class="row g-3">
@@ -265,7 +309,7 @@
     </div>
 </div>
 
-<!-- Modal Success -->
+<!-- Modals and Toasts -->
 <div class="modal fade" id="successModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content text-center">
@@ -281,17 +325,48 @@
     </div>
 </div>
 
-<!-- Toast Notifications -->
 <div class="toast-custom p-3 d-none" id="liveToast" role="alert">
     <div class="d-flex">
-        <div class="toast-body" id="toastMessage"><i class="fas fa-info-circle me-2"></i>Taarifa</div>
+        <div class="toast-body" id="toastMessage"></div>
         <button type="button" class="btn-close btn-close-white ms-auto me-0" data-bs-dismiss="toast" aria-label="Close" onclick="closeToast()"></button>
     </div>
 </div>
 
+<!-- Debug Panel -->
+<button class="btn-debug" onclick="toggleDebug()">🐛 Debug</button>
+<div class="debug-panel" id="debugPanel">
+    <div class="debug-header">
+        <strong>Debug Console</strong>
+        <button onclick="clearDebug()" style="background: none; border: none; color: #c49a6c;">Clear</button>
+    </div>
+    <pre id="debugOutput">Ready...</pre>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // ---------- UI Helpers ----------
+    // Debug functions
+    let debugMode = false;
+    
+    function toggleDebug() {
+        const panel = document.getElementById('debugPanel');
+        debugMode = !debugMode;
+        panel.classList.toggle('show');
+    }
+    
+    function addDebugLog(message, type = 'info') {
+        const output = document.getElementById('debugOutput');
+        const timestamp = new Date().toLocaleTimeString();
+        const icon = type === 'error' ? '❌' : (type === 'success' ? '✅' : '🔍');
+        output.innerHTML += `\n[${timestamp}] ${icon} ${message}`;
+        output.scrollTop = output.scrollHeight;
+        console.log(message);
+    }
+    
+    function clearDebug() {
+        document.getElementById('debugOutput').innerHTML = 'Ready...';
+    }
+    
+    // ---------- UI Elements ----------
     const businessCards = document.querySelectorAll('.business-type-card');
     const businessInputs = document.querySelectorAll('.business-type-input');
     const form = document.getElementById('partnerForm');
@@ -300,30 +375,29 @@
     const successModal = new bootstrap.Modal(document.getElementById('successModal'));
     const toastEl = document.getElementById('liveToast');
     
-    // Business type selection
+    // Business type selection UI
     businessCards.forEach((card, idx) => {
         card.addEventListener('click', () => {
             businessCards.forEach(c => c.classList.remove('selected'));
             card.classList.add('selected');
             if(businessInputs[idx]) businessInputs[idx].checked = true;
+            addDebugLog(`Selected business type: ${businessInputs[idx].value}`);
         });
     });
     
-    // Helper: show toast notification
+    // Toast helper
     function showToast(message, isError = false) {
         const toastMsg = document.getElementById('toastMessage');
         toastMsg.innerHTML = `<i class="fas ${isError ? 'fa-exclamation-triangle' : 'fa-check-circle'} me-2"></i>${message}`;
         toastEl.classList.remove('d-none');
-        setTimeout(() => {
-            toastEl.classList.add('d-none');
-        }, 5000);
+        setTimeout(() => toastEl.classList.add('d-none'), 5000);
+        addDebugLog(`Toast: ${message}`, isError ? 'error' : 'success');
     }
     
-    function closeToast() {
+    window.closeToast = function() {
         toastEl.classList.add('d-none');
     }
     
-    // Loading spinner on button
     function setLoading(loading) {
         if(loading) {
             submitBtn.disabled = true;
@@ -334,32 +408,81 @@
         }
     }
     
-    // ----- Google Apps Script Web App URL -----
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby6GNWcLeJFSr4XFAGSTLl_aTdz5t6GGzR3m-51XKI_z9GhqmRBLQvlwm_tkN8gWirDLQ/exec";
-
-async function submitFormData(formDataObj) {
-    // Remove 'no-cors' mode to allow reading response
-    const response = await fetch(APPS_SCRIPT_URL, {
-        method: 'POST',
-        mode: 'cors',  // ✅ Changed from 'no-cors' to 'cors'
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formDataObj)
-    });
-    
-    // Check if response is OK
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+    function resetForm() {
+        form.reset();
+        businessCards.forEach(c => c.classList.remove('selected'));
+        businessInputs.forEach(r => r.checked = false);
+        termsCheck.checked = false;
+        addDebugLog('Form reset');
     }
     
-    const result = await response.json();
-    return result;
-}
-
-// Then in your form submit handler, update the duplicate check section:
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+    // ---------- IMPORTANT: UPDATE THIS URL ----------
+    // Replace with your ACTUAL Web App URL from infozanfix@gmail.com
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyhI2qBpZT2nAG7r6p5ChRM8uSsVoCGGYm2_EuT1OKAk61fepTLvBh94u2eSf3fWnhORw/exec";
+    
+    addDebugLog(`Using Apps Script URL: ${APPS_SCRIPT_URL}`);
+    
+    // Test connection function
+    async function testConnection() {
+        addDebugLog('Testing connection to server...');
+        try {
+            const response = await fetch(APPS_SCRIPT_URL, {
+                method: 'GET',
+                mode: 'cors'
+            });
+            addDebugLog(`GET response status: ${response.status}`);
+            const text = await response.text();
+            addDebugLog(`Response: ${text.substring(0, 200)}`);
+            return true;
+        } catch(error) {
+            addDebugLog(`Connection failed: ${error.message}`, 'error');
+            return false;
+        }
+    }
+    
+    async function submitFormData(formDataObj) {
+        addDebugLog(`Submitting data for: ${formDataObj.fullname}`);
+        addDebugLog(`Payload: ${JSON.stringify(formDataObj, null, 2)}`);
         
-        // Validate required fields
+        try {
+            const response = await fetch(APPS_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'cors',
+                headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+                body: JSON.stringify(formDataObj)
+            });
+            
+            addDebugLog(`Response status: ${response.status}`);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            
+            const text = await response.text();
+            addDebugLog(`Raw response: ${text}`);
+            
+            try {
+                return JSON.parse(text);
+            } catch(e) {
+                addDebugLog(`Response not JSON: ${text}`, 'error');
+                return { status: "success", message: "Ombi limepokelewa", raw: text };
+            }
+        } catch(error) {
+            addDebugLog(`Fetch error: ${error.message}`, 'error');
+            return { status: "error", message: `Tatizo la mtandao: ${error.message}` };
+        }
+    }
+    
+    // Test connection on page load
+    setTimeout(() => {
+        testConnection();
+    }, 1000);
+    
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        addDebugLog('Form submitted');
+        
+        // --- Validations ---
         const fullname = document.getElementById('fullname').value.trim();
         const phone = document.getElementById('phone').value.trim();
         const businessName = document.getElementById('business_name').value.trim();
@@ -367,8 +490,18 @@ form.addEventListener('submit', async (e) => {
         const category = document.getElementById('category').value;
         const description = document.getElementById('description').value.trim();
         
+        addDebugLog(`Fullname: ${fullname}, Phone: ${phone}, Business: ${businessName}`);
+        
         if(!fullname || !phone || !businessName || !location || !category || !description) {
-            showToast("Tafadhali jaza sehemu zote zenye nyota (*)", true);
+            const missing = [];
+            if(!fullname) missing.push('Jina');
+            if(!phone) missing.push('Simu');
+            if(!businessName) missing.push('Jina la Biashara');
+            if(!location) missing.push('Eneo');
+            if(!category) missing.push('Kategoria');
+            if(!description) missing.push('Maelezo');
+            showToast(`Tafadhali jaza: ${missing.join(', ')}`, true);
+            addDebugLog(`Validation failed: missing ${missing.join(', ')}`, 'error');
             return;
         }
         
@@ -382,25 +515,24 @@ form.addEventListener('submit', async (e) => {
             }
         }
         if(!businessTypeSelected) {
-            showToast("Tafadhali chagua aina ya ushirikiano (Muuzaji / Mtoa Huduma / Zote)", true);
+            showToast("Tafadhali chagua aina ya ushirikiano", true);
+            addDebugLog('Validation failed: no business type selected', 'error');
             return;
         }
         
-        // Check Terms Checkbox (muongozo)
         if(!termsCheck.checked) {
-            showToast("Lazima ukubali Miongozo ya ZanFix ili kuwasilisha ombi.", true);
+            showToast("Lazima ukubali Miongozo ya ZanFix", true);
+            addDebugLog('Validation failed: terms not accepted', 'error');
             return;
         }
         
-        // Optional email
         const email = document.getElementById('email').value.trim();
         const whatsapp = document.getElementById('whatsapp').value.trim();
         
-        // Prepare data payload
         const payload = {
             fullname: fullname,
             phone: phone,
-            email: email,   // optional allowed empty
+            email: email,
             business_type: selectedType,
             business_name: businessName,
             location: location,
@@ -412,71 +544,58 @@ form.addEventListener('submit', async (e) => {
         };
         
         setLoading(true);
-    
-    try {
-        // Real fetch to Apps Script
-        const result = await submitFormData(payload);
-        setLoading(false);
         
-        if(result && result.status === "duplicate") {
-            showToast(result.message || "Ombi hili tayari umeshatuma! Tuna data yako, tutakujibu ndani ya masaa 24.", true);
-        } else if(result && result.status === "success") {
-            successModal.show();
-            form.reset();
-            businessCards.forEach(c => c.classList.remove('selected'));
-            businessInputs.forEach(r => r.checked = false);
-            termsCheck.checked = false;
-            showToast("Ombi lako limetumwa kwa mafanikio! Asante kwa kujiunga.", false);
-        } else {
-            showToast(result?.message || "Hitilafu ya mtandao. Tafadhali jaribu tena baadaye.", true);
+        try {
+            const result = await submitFormData(payload);
+            setLoading(false);
+            
+            addDebugLog(`Server response: ${JSON.stringify(result)}`);
+            
+            if (result && (result.status === "success" || result.status === "updated")) {
+                const successMsg = result.businessId 
+                    ? `Usajili wako umefanikiwa! Namba yako: ${result.businessId}`
+                    : (result.message || "Ombi lako limetumwa kwa mafanikio!");
+                showToast(successMsg, false);
+                successModal.show();
+                resetForm();
+                addDebugLog('Submission successful!', 'success');
+                return;
+            }
+            
+            if (result && result.status === "duplicate") {
+                showToast(result.message || "Ombi hili tayari umeshatuma!", true);
+                addDebugLog('Duplicate submission detected', 'error');
+                return;
+            }
+            
+            if (result && result.message && result.status !== "error") {
+                showToast(result.message, false);
+                if(result.businessId) successModal.show();
+                resetForm();
+                addDebugLog('Submission accepted (fallback)', 'success');
+                return;
+            }
+            
+            // Error case
+            const errorMsg = result?.message || "Hitilafu isiyojulikana. Tafadhali jaribu tena.";
+            showToast(errorMsg, true);
+            addDebugLog(`Submission error: ${errorMsg}`, 'error');
+            
+        } catch (error) {
+            console.error("Submission error:", error);
+            setLoading(false);
+            showToast("Hitilafu ya kiufundi. Tafadhali jaribu tena baadaye.", true);
+            addDebugLog(`Exception: ${error.message}`, 'error');
         }
-        // Add this to your form submit handler to handle update responses
-if(result && result.status === "updated") {
-    // Show update success message
-    showToast(result.message, false);
+    });
     
-    // Optional: Show update summary
-    if(result.updateCount) {
-        showToast(`Hii ni mara yako ya ${result.updateCount} kusasisha taarifa. Asante!`, false);
-    }
-    
-    // Reset form
-    form.reset();
-    businessCards.forEach(c => c.classList.remove('selected'));
-    businessInputs.forEach(r => r.checked = false);
-    termsCheck.checked = false;
-    
-} else if(result && result.status === "success") {
-    // New registration
-    if(result.businessId) {
-        showToast(`Usajili wako umefanikiwa! Namba yako: ${result.businessId}`, false);
-    }
-    successModal.show();
-    form.reset();
-    businessCards.forEach(c => c.classList.remove('selected'));
-    businessInputs.forEach(r => r.checked = false);
-    termsCheck.checked = false;
-}
-    } catch (error) {
-        console.error(error);
-        setLoading(false);
-        showToast("Kuna tatizo la mawasiliano. Hakikisha una mtandao mzuri na jaribu tena.", true);
-    }
-});
-    
-    // Small mock for demonstration if user doesn't have apps script yet, show note
-    if(APPS_SCRIPT_URL.includes("MOCK_PLACEHOLDER")) {
-        const infoNote = document.createElement('div');
-        infoNote.className = "alert alert-warning mt-3 text-dark small";
-        infoNote.innerHTML = "<i class='fas fa-info-circle'></i> <strong>Demo mode:</strong> data itahifadhiwa kwenye kivinjari chako kwa sasa. Ili kuunganisha na Google Sheet, weka URL sahihi ya Apps Script (Angalia maelekezo kwenye msimbo).";
-        document.querySelector('.form-card').appendChild(infoNote);
-    }
-    
-    // Guidelines link event (prevent default just for style)
+    // Guidelines link
     document.getElementById('guidelinesLink')?.addEventListener('click', (e) => {
         e.preventDefault();
-        showToast("Miongozo ya ZanFix: Usalama, uaminifu na huduma bora kwa wateja. Tunathamini ushirikiano wako!", false);
+        showToast("Miongozo ya ZanFix: Usalama, uaminifu na huduma bora kwa wateja.", false);
     });
+    
+    addDebugLog('Form loaded and ready');
 </script>
 </body>
 </html>
